@@ -21,9 +21,11 @@ The persistent memory for this project lives in:
 - `records/update-log.json`
 - `paper-library/manifest/paper-manifest.json`
 - `paper-library/logs/download-report.json`
+- `GITHUB_PUBLISH_WORKFLOW.md`
 
 ## Default rules
 - Never move papers marked `read` unless explicitly requested.
 - Exclude disliked papers from future recommendations by default.
 - Treat `Temporal hallucination in video understanding` as the main topic unless the records say otherwise.
-- When the user says `幫我更新paper`, read `records/` first, keep `read` papers fixed, skip disliked papers, and consider inbox items plus the paper-library manifest.
+- When the user says `撟急??湔paper`, read `records/` first, keep `read` papers fixed, skip disliked papers, and consider inbox items plus the paper-library manifest.
+- When the user says `更新到github`, read `GITHUB_PUBLISH_WORKFLOW.md` first, then use that file as the publishing checklist.

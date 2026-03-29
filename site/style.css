@@ -93,8 +93,8 @@ textarea {
   display: grid;
   grid-template-columns: minmax(264px, 296px) minmax(0, 1fr);
   gap: 18px;
-  width: min(1880px, calc(100vw - 12px));
-  margin: 6px auto;
+  width: min(2048px, calc(100vw - 24px));
+  margin: 12px auto;
   min-height: 100vh;
 }
 
@@ -261,6 +261,11 @@ textarea {
 
 .status-pill {
   font-size: 0.78rem;
+  justify-content: center;
+  min-width: 5.5em;
+  white-space: nowrap;
+  word-break: keep-all;
+  flex-shrink: 0;
 }
 
 .status-want {
@@ -308,9 +313,6 @@ textarea {
 }
 
 .topbar {
-  position: sticky;
-  top: 12px;
-  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
