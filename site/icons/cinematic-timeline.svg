@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Cinematic timeline research icon</title>
+  <desc id="desc">A film strip with a play marker and a horizontal timeline.</desc>
+  <defs>
+    <linearGradient id="bg" x1="74" y1="52" x2="438" y2="462" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8efe3"/>
+      <stop offset="1" stop-color="#eadbc8"/>
+    </linearGradient>
+    <linearGradient id="film" x1="124" y1="128" x2="388" y2="384" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16313e"/>
+      <stop offset="1" stop-color="#0a1720"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="92" fill="url(#bg)"/>
+  <rect x="92" y="124" width="328" height="264" rx="38" fill="url(#film)"/>
+  <rect x="118" y="150" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <rect x="118" y="202" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <rect x="118" y="254" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <rect x="118" y="306" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <rect x="366" y="150" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <rect x="366" y="202" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <rect x="366" y="254" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <rect x="366" y="306" width="28" height="28" rx="6" fill="#f6e4ca"/>
+  <path d="M230 190l102 66-102 66z" fill="#f0b36f"/>
+  <path d="M150 396h212" stroke="#0c6c65" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="178" cy="396" r="12" fill="#0c6c65"/>
+  <circle cx="258" cy="396" r="12" fill="#d96c3f"/>
+  <circle cx="338" cy="396" r="12" fill="#2f7bb8"/>
+  <circle cx="256" cy="256" r="198" fill="none" stroke="#0f1c26" stroke-width="8" opacity="0.10"/>
+</svg>

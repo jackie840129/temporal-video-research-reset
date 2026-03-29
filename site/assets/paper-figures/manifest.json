@@ -1,0 +1,114 @@
+﻿{
+    "eventsurvey":  {
+                        "first_page":  1,
+                        "page_count":  14
+                    },
+    "groundmore":  {
+                       "first_page":  1,
+                       "page_count":  12
+                   },
+    "timechat":  {
+                     "first_page":  1,
+                     "page_count":  11
+                 },
+    "vited":  {
+                  "first_page":  1,
+                  "page_count":  11
+              },
+    "tempcompass":  {
+                        "first_page":  1,
+                        "page_count":  41
+                    },
+    "protege":  {
+                    "first_page":  1,
+                    "page_count":  11
+                },
+    "univtg":  {
+                   "first_page":  1,
+                   "page_count":  11
+               },
+    "lvhaystack":  {
+                       "first_page":  1,
+                       "page_count":  13
+                   },
+    "videorefer":  {
+                       "first_page":  1,
+                       "page_count":  11
+                   },
+    "guidance":  {
+                     "first_page":  1,
+                     "page_count":  12
+                 },
+    "longvideobench":  {
+                           "first_page":  1,
+                           "page_count":  29
+                       },
+    "seq2time":  {
+                     "first_page":  1,
+                     "page_count":  10
+                 },
+    "vidhalluc":  {
+                      "first_page":  1,
+                      "page_count":  22
+                  },
+    "compositional":  {
+                          "first_page":  1,
+                          "page_count":  10
+                      },
+    "consistency":  {
+                        "first_page":  1,
+                        "page_count":  10
+                    },
+    "moviechat":  {
+                      "first_page":  1,
+                      "page_count":  12
+                  },
+    "scanonce":  {
+                     "first_page":  1,
+                     "page_count":  11
+                 },
+    "mlvu":  {
+                 "first_page":  1,
+                 "page_count":  25
+             },
+    "tadrobust":  {
+                      "first_page":  1,
+                      "page_count":  12
+                  },
+    "videocomp":  {
+                      "first_page":  1,
+                      "page_count":  11
+                  },
+    "egotempo":  {
+                     "first_page":  1,
+                     "page_count":  10
+                 },
+    "debias":  {
+                   "first_page":  1,
+                   "page_count":  13
+               },
+    "mashvlm":  {
+                    "first_page":  1,
+                    "page_count":  16
+                },
+    "trtv":  {
+                 "first_page":  1,
+                 "page_count":  30
+             },
+    "step":  {
+                 "first_page":  1,
+                 "page_count":  11
+             },
+    "tsgvsurvey":  {
+                       "first_page":  1,
+                       "page_count":  29
+                   },
+    "videoespresso":  {
+                          "first_page":  1,
+                          "page_count":  11
+                      },
+    "mvbench":  {
+                    "first_page":  1,
+                    "page_count":  12
+                }
+}

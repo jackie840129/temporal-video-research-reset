@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temporal Video Research Navigator</title>
+  <link rel="icon" type="image/svg+xml" href="./icons/modern-data-graph.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <p class="eyebrow">Research Reset</p>
+        <h1>Temporal Video Research Navigator</h1>
+        <p class="lede">&#29992;&#20114;&#21205;&#24335;&#20171;&#38754;&#24555;&#36895;&#30475;&#30740;&#31350;&#22320;&#22294;&#12289;&#25361; paper&#12289;&#36861;&#36481;&#36914;&#24230;&#65292;&#20006;&#27770;&#23450;&#19979;&#19968;&#27493;&#12290;</p>
+      </div>
+      <nav class="nav">
+        <button class="nav-link active" data-view="dashboard">&#32317;&#35261;</button>
+        <button class="nav-link" data-view="papers">&#35542;&#25991;</button>
+        <button class="nav-link" data-view="roadmap">10 &#36849;&#35336;&#30059;</button>
+        <button class="nav-link" data-view="inbox">&#25910;&#20214;&#21263;</button>
+        <button class="nav-link" data-view="taskboard">&#26412;&#36849;&#20219;&#21209;&#26495;</button>
+        <button class="nav-link" data-view="problems">&#38283;&#25918;&#21839;&#38988;</button>
+        <button class="nav-link" data-view="decision">&#19979;&#19968;&#27493;&#24314;&#35696;</button>
+      </nav>
+      <section class="sidebar-card">
+        <h2>&#20320;&#29694;&#22312;&#30340;&#27169;&#24335;</h2>
+        <div class="chip-row">
+          <span class="chip">&#25991;&#29544;&#25484;&#25569;&#20778;&#20808;</span>
+          <span class="chip">Temporal understanding</span>
+          <span class="chip">&#27599;&#36849; 8-10 &#23567;&#26178;</span>
+        </div>
+      </section>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">&#20114;&#21205;&#24037;&#20316;&#21488;</p>
+          <h2 id="view-title">&#32317;&#35261;</h2>
+        </div>
+        <div class="topbar-actions">
+          <button id="ask-codex-btn" class="primary-btn">Ask Codex</button>
+          <button id="quick-jump-btn" class="secondary-btn">&#24555;&#36895;&#36339;&#36681;</button>
+          <button id="reset-state-btn" class="secondary-btn">&#37325;&#35373;&#36984;&#25799;</button>
+        </div>
+      </header>
+      <section id="view-dashboard" class="view active"></section>
+      <section id="view-papers" class="view"></section>
+      <section id="view-roadmap" class="view"></section>
+      <section id="view-inbox" class="view"></section>
+      <section id="view-taskboard" class="view"></section>
+      <section id="view-problems" class="view"></section>
+      <section id="view-decision" class="view"></section>
+    </main>
+  </div>
+  <div id="command-palette-root"></div>
+  <div id="codex-prompt-root"></div>
+  <div id="deep-understand-root"></div>
+  <div id="image-viewer-root"></div>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

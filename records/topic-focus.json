@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "updated_at": "2026-03-27",
+  "primary_topic": "Temporal hallucination in video understanding",
+  "secondary_topics": [
+    "Temporal reasoning",
+    "Long-video understanding",
+    "Temporal grounding",
+    "Evidence faithfulness"
+  ],
+  "query_terms": [
+    "temporal hallucination",
+    "temporal inconsistency",
+    "video hallucination",
+    "incorrect temporal relationships",
+    "temporal grounding faithfulness",
+    "temporal order confusion"
+  ],
+  "selection_policy": {
+    "prefer_evaluation_and_consistency": true,
+    "prefer_grounded_evidence_methods": true,
+    "avoid_repo_only_value": true
+  },
+  "active_questions": [
+    "How do video models confuse event order under sparse frame sampling?",
+    "How often do video LLMs hallucinate temporally plausible but visually unsupported relationships?",
+    "Which benchmarks actually expose temporal hallucination instead of spatial shortcutting?"
+  ],
+  "notes": [
+    "Wear-vs-remove jacket order confusion is a key practical failure mode.",
+    "Frame sampling plus positional encoding is often insufficient for faithful temporal order understanding."
+  ]
+}

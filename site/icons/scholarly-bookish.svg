@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Scholarly bookish research icon</title>
+  <desc id="desc">An open book with a small compass star for knowledge navigation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="56" x2="448" y2="456" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8f3e8"/>
+      <stop offset="1" stop-color="#e7dcc7"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="96" y1="104" x2="416" y2="408" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#134d4a"/>
+      <stop offset="1" stop-color="#0a2e33"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="92" fill="url(#bg)"/>
+  <rect x="70" y="74" width="372" height="364" rx="72" fill="#fffaf0" opacity="0.7"/>
+  <path d="M126 182c0-20 16-36 36-36h75c21 0 41 7 59 19v177c-18-12-38-19-59-19h-75c-20 0-36-16-36-36z" fill="url(#ink)"/>
+  <path d="M386 182c0-20-16-36-36-36h-75c-21 0-41 7-59 19v177c18-12 38-19 59-19h75c20 0 36-16 36-36z" fill="url(#ink)" opacity="0.88"/>
+  <path d="M172 174c0-10 8-18 18-18h58c12 0 24 3 35 9v137c-11-6-23-9-35-9h-58c-10 0-18-8-18-18z" fill="#fff7ea" opacity="0.98"/>
+  <path d="M340 174c0-10-8-18-18-18h-58c-12 0-24 3-35 9v137c11-6 23-9 35-9h58c10 0 18-8 18-18z" fill="#fff7ea" opacity="0.98"/>
+  <path d="M248 164v160" stroke="#d7c3a0" stroke-width="8" stroke-linecap="round"/>
+  <path d="M256 118l10 26 28 2-22 18 7 27-23-15-23 15 7-27-22-18 28-2z" fill="#d96c3f"/>
+  <circle cx="256" cy="256" r="198" fill="none" stroke="#0f4746" stroke-width="8" opacity="0.12"/>
+</svg>

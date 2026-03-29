@@ -1,0 +1,230 @@
+﻿{
+    "generated_at":  "2026-03-27T02:26:55",
+    "root":  "C:\\Users\\jackieliu\\Documents\\Research\\temporal-video-research-reset",
+    "papers":  [
+                   {
+                       "id":  "tempcompass",
+                       "title":  "TempCompass: Do Video LLMs Really Understand Videos?",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/tempcompass.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2403.00476.pdf"
+                   },
+                   {
+                       "id":  "mvbench",
+                       "title":  "MVBench: A Comprehensive Multi-modal Video Understanding Benchmark",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/mvbench.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_MVBench_A_Comprehensive_Multi-modal_Video_Understanding_Benchmark_CVPR_2024_paper.pdf"
+                   },
+                   {
+                       "id":  "timechat",
+                       "title":  "TimeChat: A Time-sensitive Multimodal Large Language Model for Long Video Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/timechat.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024/papers/Ren_TimeChat_A_Time-sensitive_Multimodal_Large_Language_Model_for_Long_Video_CVPR_2024_paper.pdf"
+                   },
+                   {
+                       "id":  "moviechat",
+                       "title":  "MovieChat: From Dense Token to Sparse Memory for Long Video Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/moviechat.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024/papers/Song_MovieChat_From_Dense_Token_to_Sparse_Memory_for_Long_Video_CVPR_2024_paper.pdf"
+                   },
+                   {
+                       "id":  "mlvu",
+                       "title":  "MLVU: A Comprehensive Benchmark for Multi-Task Long Video Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/mlvu.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2406.04264.pdf"
+                   },
+                   {
+                       "id":  "longvideobench",
+                       "title":  "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/longvideobench.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2407.15754.pdf"
+                   },
+                   {
+                       "id":  "trtv",
+                       "title":  "Temporal Reasoning Transfer from Text to Video",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/trtv.pdf",
+                       "pdf_url":  "https://openreview.net/pdf?id=sHAvMp5J4R"
+                   },
+                   {
+                       "id":  "lvhaystack",
+                       "title":  "Re-thinking Temporal Search for Long-Form Video Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/lvhaystack.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Ye_Re-thinking_Temporal_Search_for_Long-Form_Video_Understanding_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "vited",
+                       "title":  "VITED: Video Temporal Evidence Distillation",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/vited.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Lu_VITED_Video_Temporal_Evidence_Distillation_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "consistency",
+                       "title":  "On the Consistency of Video Large Language Models in Temporal Comprehension",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/consistency.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Jung_On_the_Consistency_of_Video_Large_Language_Models_in_Temporal_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "egotempo",
+                       "title":  "Omnia de EgoTempo: Benchmarking Temporal Understanding of Multi-Modal LLMs in Egocentric Videos",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/egotempo.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Plizzari_Omnia_de_EgoTempo_Benchmarking_Temporal_Understanding_of_Multi-Modal_LLMs_in_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "seq2time",
+                       "title":  "Seq2Time: Sequential Knowledge Transfer for Video LLM Temporal Grounding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/seq2time.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Deng_Seq2Time_Sequential_Knowledge_Transfer_for_Video_LLM_Temporal_Grounding_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "step",
+                       "title":  "STEP: Enhancing Video-LLMs\u0027 Compositional Reasoning by Spatio-Temporal Graph-guided Self-Training",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/step.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Qiu_STEP_Enhancing_Video-LLMs_Compositional_Reasoning_by_Spatio-Temporal_Graph-guided_Self-Training_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "videocomp",
+                       "title":  "VideoComp: Advancing Fine-Grained Compositional and Temporal Alignment in Video-Text Models",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/videocomp.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_VideoComp_Advancing_Fine-Grained_Compositional_and_Temporal_Alignment_in_Video-Text_Models_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "groundmore",
+                       "title":  "Motion-Grounded Video Reasoning: Understanding and Perceiving Motion at Pixel Level",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/groundmore.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Deng_Motion-Grounded_Video_Reasoning_Understanding_and_Perceiving_Motion_at_Pixel_Level_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "videoespresso",
+                       "title":  "VideoEspresso: A Large-Scale Chain-of-Thought Dataset for Fine-Grained Video Reasoning via Core Frame Selection",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/videoespresso.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Han_VideoEspresso_A_Large-Scale_Chain-of-Thought_Dataset_for_Fine-Grained_Video_Reasoning_via_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "univtg",
+                       "title":  "UniVTG: Towards Unified Video-Language Temporal Grounding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/univtg.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/ICCV2023/papers/Lin_UniVTG_Towards_Unified_Video-Language_Temporal_Grounding_ICCV_2023_paper.pdf"
+                   },
+                   {
+                       "id":  "protege",
+                       "title":  "ProTeGe: Untrimmed Pretraining for Video Temporal Grounding by Video Temporal Grounding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/protege.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_ProTeGe_Untrimmed_Pretraining_for_Video_Temporal_Grounding_by_Video_Temporal_CVPR_2023_paper.pdf"
+                   },
+                   {
+                       "id":  "guidance",
+                       "title":  "Localizing Moments in Long Video Via Multimodal Guidance",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/guidance.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/ICCV2023/papers/Barrios_Localizing_Moments_in_Long_Video_Via_Multimodal_Guidance_ICCV_2023_paper.pdf"
+                   },
+                   {
+                       "id":  "scanonce",
+                       "title":  "Scanning Only Once: An End-to-end Framework for Fast Temporal Grounding in Long Videos",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/scanonce.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/ICCV2023/papers/Pan_Scanning_Only_Once_An_End-to-end_Framework_for_Fast_Temporal_Grounding_ICCV_2023_paper.pdf"
+                   },
+                   {
+                       "id":  "compositional",
+                       "title":  "Compositional Video Understanding with Spatiotemporal Structure-based Transformers",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/compositional.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024/papers/Yun_Compositional_Video_Understanding_with_Spatiotemporal_Structure-based_Transformers_CVPR_2024_paper.pdf"
+                   },
+                   {
+                       "id":  "tadrobust",
+                       "title":  "Benchmarking the Robustness of Temporal Action Detection Models Against Temporal Corruptions",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/tadrobust.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024/papers/Zeng_Benchmarking_the_Robustness_of_Temporal_Action_Detection_Models_Against_Temporal_CVPR_2024_paper.pdf"
+                   },
+                   {
+                       "id":  "videorefer",
+                       "title":  "VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/videorefer.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2025/papers/Yuan_VideoRefer_Suite_Advancing_Spatial-Temporal_Object_Understanding_with_Video_LLM_CVPR_2025_paper.pdf"
+                   },
+                   {
+                       "id":  "debias",
+                       "title":  "Towards Debiasing Temporal Sentence Grounding in Video",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/debias.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2111.04321.pdf"
+                   },
+                   {
+                       "id":  "vidhalluc",
+                       "title":  "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/vidhalluc.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2412.03735.pdf"
+                   },
+                   {
+                       "id":  "tsgvsurvey",
+                       "title":  "Temporal Sentence Grounding in Videos: A Survey and Future Directions",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/tsgvsurvey.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2201.08071.pdf"
+                   },
+                   {
+                       "id":  "eventsurvey",
+                       "title":  "A Survey of Video Datasets for Grounded Event Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/eventsurvey.pdf",
+                       "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024W/VDU/papers/Sanders_A_Survey_of_Video_Datasets_for_Grounded_Event_Understanding_CVPRW_2024_paper.pdf"
+                   },
+                   {
+                       "id":  "mashvlm",
+                       "title":  "MASH-VLM: Mitigating Action-Scene Hallucination in Video-LLMs through Disentangled Spatial-Temporal Representations",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/mashvlm.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2503.15871.pdf"
+                   }
+               ]
+}

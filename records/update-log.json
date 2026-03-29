@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-03-28",
+  "entries": [
+    {
+      "date": "2026-03-27",
+      "action": "initialized_records",
+      "summary": "Created canonical record files for paper tracking, inbox triage, topic focus, and future update-paper workflow."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "temporal_hallucination_focus",
+      "summary": "Set Temporal hallucination in video understanding as the primary topic and added related seed papers and search terms."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_library_scaffold",
+      "summary": "Added paper-library folders, manifest generation, download script, and logs so future chats can continue PDF/download work from files instead of chat memory."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "site_copy_minimal_zh",
+      "summary": "Applied minimal Chinese fixes to high-frequency navigation, taskboard, inbox, and detail UI copy while keeping core research terms in English when helpful."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_library_download_refresh",
+      "summary": "Updated the paper downloader to resolve CVF and OpenReview PDF targets directly, downloaded the remaining paper-library PDFs successfully, and left only trtv as a manual follow-up due to an OpenReview 403 response."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_library_trtv_manual_fill",
+      "summary": "Confirmed the manually supplied trtv PDF is in paper-library/pdfs, refreshed the download report so every manifest paper is now present on disk, and removed the obsolete manual follow-up note."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "after_summary_workflow_written",
+      "summary": "Added notes/after-summary-workflow.md to define the repeatable post-summary workflow for evidence checks, figure handling, website quick-read buttons, decision framing, and records updates."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "site_quick_understand_added",
+      "summary": "Added paper-insights data and website quick-understand support so selected papers can show a one-minute brief, structured bullets, and future figure slots directly inside the paper detail view."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_insights_batch_one_completed",
+      "summary": "Completed the first insights batch for mvbench, timechat, moviechat, mlvu, longvideobench, lvhaystack, vited, egotempo, seq2time, step, videocomp, and groundmore; installed Poppler locally and generated preview figures for the available insight papers."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_insights_completed",
+      "summary": "Filled site/paper-insights.json for every paper in the manifest so all tracked papers now have quick-understand metadata for the website."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_preview_pipeline_added",
+      "summary": "Added scripts to generate first-page preview images from PDFs and populated website figure paths so every paper insight now has a preview image."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_summaries_batch_b_completed",
+      "summary": "Added full summary markdown files for seq2time, step, videocomp, groundmore, univtg, protege, guidance, and scanonce."
+    },
+    {
+      "date": "2026-03-27",
+      "action": "paper_summaries_completed",
+      "summary": "Filled summary markdown files for every paper in the manifest so the paper library now has complete summaries, website insights, and preview figures for all tracked papers."
+    },
+    {
+      "date": "2026-03-28",
+      "action": "site_lesson_system_rebuilt",
+      "summary": "Reworked the website paper-reading flow so Quick understand is more informative and Detailed understand now opens a separate lesson window backed by site/paper-lessons.json and site/lessons/* instead of the older in-page modal flow."
+    },
+    {
+      "date": "2026-03-28",
+      "action": "lesson_preview_viewer_finalized",
+      "summary": "Stabilized the Detailed understand floating paper viewer: it is now a top-layer movable and resizable preview window with previous/next page navigation, zoom, and non-blocking seminar reading workflow."
+    },
+    {
+      "date": "2026-03-28",
+      "action": "main_site_blue_seminar_style",
+      "summary": "Restyled the main site homepage/dashboard to feel like the lesson seminar deck in a blue version while keeping the lesson pages themselves on their own visual system."
+    },
+    {
+      "date": "2026-03-28",
+      "action": "all_papers_lesson_decks_completed",
+      "summary": "Unified all 28 papers under the shared seminar-style Detailed understand deck, removed TempCompass-only branching, and confirmed the lesson routes for multiple papers still load successfully."
+    },
+    {
+      "date": "2026-03-28",
+      "action": "all_papers_lesson_content_polished",
+      "summary": "Polished the seminar content for all 28 papers in site/paper-lessons.json so thesis, problem framing, method, results, takeaways, discussion prompts, and summary notes read like a PhD seminar report rather than generic summaries."
+    },
+    {
+      "date": "2026-03-28",
+      "action": "lesson_titles_shifted_to_seminar_language",
+      "summary": "Changed lesson slide titles and section headers from teaching-meta wording to seminar-presentation wording such as Research Problem, Motivation and Framing, Method Overview, Experimental Findings, and Key Takeaways."
+    }
+  ]
+}

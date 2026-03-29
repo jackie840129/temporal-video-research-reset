@@ -1,0 +1,623 @@
+﻿{
+    "schema_version":  1,
+    "generated_at":  "2026-03-27T02:48:53",
+    "topic_focus":  "Temporal hallucination in video understanding",
+    "papers":  [
+                   {
+                       "id":  "tempcompass",
+                       "title":  "TempCompass: Do Video LLMs Really Understand Videos?",
+                       "venue":  "ACL",
+                       "year":  2024,
+                       "quick_takeaway":  "A clean diagnostic benchmark for whether a model really uses temporal evidence instead of static frame cues.",
+                       "problem":  "Video evaluation often hides temporal failure behind single-frame shortcuts and narrow QA formats.",
+                       "method_or_setup":  "Uses conflicting video pairs, multiple temporal aspect categories, diverse instructions, and LLM-based evaluation.",
+                       "why_it_matters":  "If a model fails here, later gains on grounding or reasoning may just be benchmark luck.",
+                       "key_points":  [
+                                          "Conflicting videos reduce easy static shortcuts.",
+                                          "Multiple temporal aspects expose different failure modes.",
+                                          "Current Video LLMs and even Image LLMs still perform poorly on temporal perception."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare against VidHalluc to separate perception failure from hallucination failure.",
+                                                  "Check which temporal aspect breaks first.",
+                                                  "Use it as the first diagnostic lens before reading method papers."
+                                              ],
+                       "figure":  "./assets/paper-figures/tempcompass/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "mvbench",
+                       "title":  "MVBench: A Comprehensive Multi-modal Video Understanding Benchmark",
+                       "venue":  "CVPR",
+                       "year":  2024,
+                       "quick_takeaway":  "A broad benchmark that makes it harder for video models to hide behind one easy task type.",
+                       "problem":  "Single-task or narrow benchmarks can overstate how well a model understands time-sensitive video content.",
+                       "method_or_setup":  "Covers a wide range of video understanding tasks so failures are visible across more than one setting.",
+                       "why_it_matters":  "It gives a wider baseline for judging whether a temporal improvement is real or just benchmark-specific.",
+                       "key_points":  [
+                                          "Broader task coverage exposes more failure modes.",
+                                          "Useful as a wide-angle comparison point.",
+                                          "Helps separate general video skill from temporal skill."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare it with TempCompass and VidHalluc.",
+                                                  "Check which task types break first.",
+                                                  "Use it to sanity-check claims of general video understanding."
+                                              ],
+                       "figure":  "./assets/paper-figures/mvbench/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "timechat",
+                       "title":  "TimeChat: A Time-sensitive Multimodal Large Language Model for Long Video Understanding",
+                       "venue":  "CVPR",
+                       "year":  2024,
+                       "quick_takeaway":  "A method paper that pushes the model to care about timestamps and long-video timing.",
+                       "problem":  "Long videos need explicit time binding, not just semantic summary ability.",
+                       "method_or_setup":  "Builds a time-sensitive multimodal model with stronger temporal awareness for long video understanding.",
+                       "why_it_matters":  "It is a clean anchor for asking whether timestamp awareness actually improves temporal faithfulness.",
+                       "key_points":  [
+                                          "Focuses on explicit time sensitivity.",
+                                          "Targets long-video understanding rather than short clip QA.",
+                                          "Useful when comparing timestamp-aware and timestamp-blind models."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare against MovieChat and LongVideoBench.",
+                                                  "Ask whether time sensitivity helps actual grounding or just response style.",
+                                                  "Use it as a method-side anchor for temporal localization."
+                                              ],
+                       "figure":  "./assets/paper-figures/timechat/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "moviechat",
+                       "title":  "MovieChat: From Dense Token to Sparse Memory for Long Video Understanding",
+                       "venue":  "CVPR",
+                       "year":  2024,
+                       "quick_takeaway":  "A long-video memory paper that tries to compress dense video evidence into something a model can actually use.",
+                       "problem":  "Long videos are too dense for naive token-by-token reasoning.",
+                       "method_or_setup":  "Moves from dense tokens toward sparse memory so the model can track important information over long videos.",
+                       "why_it_matters":  "It shows how memory design affects whether temporal evidence survives long-context compression.",
+                       "key_points":  [
+                                          "Dense video tokens are hard to scale.",
+                                          "Sparse memory is the core design move.",
+                                          "Relevant for long-context video reasoning, not only QA."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare against TimeChat and LongVideoBench.",
+                                                  "Check whether memory helps with order or just summarization.",
+                                                  "Use it as the memory-design reference in the long-video cluster."
+                                              ],
+                       "figure":  "./assets/paper-figures/moviechat/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "mlvu",
+                       "title":  "MLVU: A Comprehensive Benchmark for Multi-Task Long Video Understanding",
+                       "venue":  "arXiv",
+                       "year":  2024,
+                       "quick_takeaway":  "A multi-task benchmark for long videos that helps test whether models degrade as context and task variety increase.",
+                       "problem":  "Long-video evaluation needs more than one task if we want to see context-related failure.",
+                       "method_or_setup":  "Evaluates multiple long-video understanding tasks in one benchmark.",
+                       "why_it_matters":  "It is a useful baseline for seeing whether a model\u0027s temporal strength holds across different tasks.",
+                       "key_points":  [
+                                          "Multi-task setup makes evaluation broader.",
+                                          "Good for spotting context-length degradation.",
+                                          "Helps compare long-video reasoning against short-clip QA."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with LongVideoBench for long-context coverage.",
+                                                  "Look for task diversity effects.",
+                                                  "Use it to detect whether performance drops with broader task demands."
+                                              ],
+                       "figure":  "./assets/paper-figures/mlvu/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "longvideobench",
+                       "title":  "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding",
+                       "venue":  "NeurIPS D\u0026B",
+                       "year":  2024,
+                       "quick_takeaway":  "A benchmark for long-context interleaved video-language reasoning where retrieval and attention to scattered evidence matter.",
+                       "problem":  "Long-context video-language understanding is fragile when evidence is spread across time.",
+                       "method_or_setup":  "Builds a long-context benchmark with interleaved video-language inputs to stress temporal reasoning.",
+                       "why_it_matters":  "It helps test whether models can keep evidence aligned over longer mixed-modality inputs.",
+                       "key_points":  [
+                                          "Interleaved inputs increase reasoning difficulty.",
+                                          "Long-context evidence is easy to lose.",
+                                          "Useful for studying retrieval-like behavior in video LLMs."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare against MLVU and MovieChat.",
+                                                  "Check whether retrieval quality predicts answers.",
+                                                  "Use it when reasoning across multiple moments matters."
+                                              ],
+                       "figure":  "./assets/paper-figures/longvideobench/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "trtv",
+                       "title":  "Temporal Reasoning Transfer from Text to Video",
+                       "venue":  "ICLR",
+                       "year":  2025,
+                       "quick_takeaway":  "TRTV argues that video temporal reasoning fails not only because of visual encoding, but because the underlying LLM itself struggles with temporal concepts.",
+                       "problem":  "The bottleneck may be temporal reasoning in the language backbone, not just missing visual evidence.",
+                       "method_or_setup":  "Introduces T3, a text-only transfer setup that synthesizes temporal reasoning tasks from image-text datasets.",
+                       "why_it_matters":  "If the LLM backbone is weak on temporal concepts, the model can sound fluent while still hallucinating order, duration, or temporal relation facts.",
+                       "key_points":  [
+                                          "A probing classifier suggests temporal information already exists in video representations.",
+                                          "T3 strengthens the LLM side without using video data.",
+                                          "Reported gains appear on TempCompass and Video-MME temporal reasoning."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Use this paper when defining whether the bottleneck is perception or reasoning.",
+                                                  "Test how far text-only transfer can go on harder grounded evidence tasks.",
+                                                  "Compare with video-side fixes to see which lever matters most."
+                                              ],
+                       "figure":  "./assets/paper-figures/trtv/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "lvhaystack",
+                       "title":  "Re-thinking Temporal Search for Long-Form Video Understanding",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A strong reframe of long-video understanding as finding the right sparse moments first.",
+                       "problem":  "Long-form video fails often because the model does not search the right evidence moments.",
+                       "method_or_setup":  "Treats long-video understanding as temporal search over sparse evidence rather than dense scanning.",
+                       "why_it_matters":  "It is one of the clearest papers for arguing that search quality is a bottleneck before reasoning quality.",
+                       "key_points":  [
+                                          "Evidence is sparse in long videos.",
+                                          "Search should be judged separately from final answers.",
+                                          "Strong fit for temporal hallucination and retrieval failures."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with VITED and LongVideoBench.",
+                                                  "Ask whether better search fixes hallucination.",
+                                                  "Use it as the main long-video search reference."
+                                              ],
+                       "figure":  "./assets/paper-figures/lvhaystack/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "vited",
+                       "title":  "VITED: Video Temporal Evidence Distillation",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A paper that makes temporal evidence itself the object of learning.",
+                       "problem":  "Video models often answer without a clear evidence chain for the relevant time span.",
+                       "method_or_setup":  "Distills temporal evidence so long-form reasoning can be tied to more explicit video support.",
+                       "why_it_matters":  "It is useful for thinking about faithfulness, not just accuracy.",
+                       "key_points":  [
+                                          "Evidence chains are central.",
+                                          "Targets long-form reasoning settings.",
+                                          "Good comparison point for search-first methods."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with lvhaystack and Consistency.",
+                                                  "Ask whether evidence distillation improves faithfulness.",
+                                                  "Use it when you want grounded reasoning rather than stylistic answers."
+                                              ],
+                       "figure":  "./assets/paper-figures/vited/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "consistency",
+                       "title":  "On the Consistency of Video Large Language Models in Temporal Comprehension",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "The paper shows that even when Video LLMs can find a moment once, they often cannot stay consistent when probed again.",
+                       "problem":  "A single correct timestamp is not enough if the model cannot preserve that belief across follow-up checks.",
+                       "method_or_setup":  "Starts from an initial moment prediction and applies grounding and verification probes to test self-consistency.",
+                       "why_it_matters":  "Temporal hallucination is often instability over repeated questioning, not just one wrong answer.",
+                       "key_points":  [
+                                          "Separates grounding consistency from verification consistency.",
+                                          "Many models are sensitive to wording, content shifts, and task setup.",
+                                          "Event temporal verification tuning improves both grounding and consistency."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Use this when arguing that temporal faithfulness needs repeated self-checks.",
+                                                  "Compare with hallucination benchmarks to see whether errors are stable or just one-off.",
+                                                  "Ask whether better perception or better verification is the real bottleneck."
+                                              ],
+                       "figure":  "./assets/paper-figures/consistency/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "egotempo",
+                       "title":  "Omnia de EgoTempo: Benchmarking Temporal Understanding of Multi-Modal LLMs in Egocentric Videos",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A benchmark focused on egocentric video, where temporal understanding is often harder and shortcuts are easier to miss.",
+                       "problem":  "Egocentric videos create a different temporal difficulty profile than standard third-person video.",
+                       "method_or_setup":  "Benchmarks temporal understanding on egocentric video settings.",
+                       "why_it_matters":  "It is useful for exposing shortcutting in real-world first-person scenes.",
+                       "key_points":  [
+                                          "Egocentric viewpoint changes the problem.",
+                                          "Good for temporal order and action understanding.",
+                                          "Helps test generalization beyond curated benchmark clips."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with TempCompass and VidHalluc.",
+                                                  "Check whether egocentric scenes amplify order confusion.",
+                                                  "Use it when you care about first-person temporal understanding."
+                                              ],
+                       "figure":  "./assets/paper-figures/egotempo/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "seq2time",
+                       "title":  "Seq2Time: Sequential Knowledge Transfer for Video LLM Temporal Grounding",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A transfer-style paper that tries to move sequential knowledge into temporal grounding.",
+                       "problem":  "Temporal grounding is hard when models do not transfer sequence knowledge well.",
+                       "method_or_setup":  "Uses sequential knowledge transfer to help video LLMs learn temporal grounding.",
+                       "why_it_matters":  "It is useful for asking whether grounding improves from data transfer or from new model structure.",
+                       "key_points":  [
+                                          "Focuses on knowledge transfer.",
+                                          "Targets temporal grounding directly.",
+                                          "Relevant for data-centric improvement strategies."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare against UniVTG and ProTeGe.",
+                                                  "Ask whether transfer changes faithfulness or only benchmark score.",
+                                                  "Use it when studying how temporal knowledge enters the model."
+                                              ],
+                       "figure":  "./assets/paper-figures/seq2time/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "step",
+                       "title":  "STEP: Enhancing Video-LLMs\u0027 Compositional Reasoning by Spatio-Temporal Graph-guided Self-Training",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A compositional reasoning paper that uses graph-guided self-training to make spatio-temporal reasoning more explicit.",
+                       "problem":  "Video LLMs struggle when a question requires multiple linked temporal facts.",
+                       "method_or_setup":  "Adds spatio-temporal graph guidance and self-training to strengthen compositional reasoning.",
+                       "why_it_matters":  "It helps test whether explicit structure reduces temporal hallucination in multi-step reasoning.",
+                       "key_points":  [
+                                          "Graph guidance makes reasoning more structured.",
+                                          "Self-training is part of the learning loop.",
+                                          "Good fit for compositional temporal questions."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with VideoComp and VITED.",
+                                                  "Check whether structure helps faithfulness or only answer format.",
+                                                  "Use it for compositional reasoning comparisons."
+                                              ],
+                       "figure":  "./assets/paper-figures/step/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "videocomp",
+                       "title":  "VideoComp: Advancing Fine-Grained Compositional and Temporal Alignment in Video-Text Models",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A fine-grained alignment paper aimed at the subtle temporal mismatches that broad benchmarks often miss.",
+                       "problem":  "Models can look good on broad metrics while still failing on reordering and subtle negative examples.",
+                       "method_or_setup":  "Builds fine-grained compositional and temporal alignment signals for video-text models.",
+                       "why_it_matters":  "It is useful for catching the small temporal errors that become big hallucinations in practice.",
+                       "key_points":  [
+                                          "Targets subtle negative pairs.",
+                                          "Focuses on alignment, not just classification.",
+                                          "Good stress test for temporal ordering."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with STEP and TempCompass.",
+                                                  "Ask whether alignment gains transfer to free-form QA.",
+                                                  "Use it to probe reordering sensitivity."
+                                              ],
+                       "figure":  "./assets/paper-figures/videocomp/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "groundmore",
+                       "title":  "Motion-Grounded Video Reasoning: Understanding and Perceiving Motion at Pixel Level",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A motion-grounded reasoning paper that pushes video understanding closer to pixel-level movement evidence.",
+                       "problem":  "Temporal reasoning is weak when the model ignores actual motion evidence.",
+                       "method_or_setup":  "Focuses on motion-grounded reasoning at the pixel level.",
+                       "why_it_matters":  "It is helpful when you want evidence grounded in visual change, not just scene semantics.",
+                       "key_points":  [
+                                          "Motion is treated as first-class evidence.",
+                                          "Pixel-level grounding matters for temporal questions.",
+                                          "Relevant for causal and counterfactual reasoning."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with VITED and STEP.",
+                                                  "Check whether motion grounding reduces hallucination.",
+                                                  "Use it for evidence-centric temporal reasoning discussions."
+                                              ],
+                       "figure":  "./assets/paper-figures/groundmore/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "videoespresso",
+                       "title":  "VideoEspresso: A Large-Scale Chain-of-Thought Dataset for Fine-Grained Video Reasoning via Core Frame Selection",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "Good paper for thinking about core-frame selection and reasoning supervision.",
+                       "problem":  "Compositional temporal reasoning is often weak even when benchmark scores improve.",
+                       "method_or_setup":  "Focuses on explicit structure, evidence chains, or multi-step temporal reasoning.",
+                       "why_it_matters":  "Useful for checking whether the model can maintain grounded multi-step temporal reasoning.",
+                       "key_points":  [
+                                          "Main focus: reasoning supervision.",
+                                          "Category: causal with CVPR 2025 context.",
+                                          "Best used as a B-tier reference for good paper for thinking about core-frame selection and reasoning supervision."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Check whether the reasoning chain is grounded.",
+                                                  "Compare with a benchmark paper to avoid score-only reading.",
+                                                  "Ask whether the structure actually improves faithfulness."
+                                              ],
+                       "figure":  "./assets/paper-figures/videoespresso/preview.png",
+                       "figure_caption":  "First-page preview generated from the PDF."
+                   },
+                   {
+                       "id":  "univtg",
+                       "title":  "UniVTG: Towards Unified Video-Language Temporal Grounding",
+                       "venue":  "ICCV",
+                       "year":  2023,
+                       "quick_takeaway":  "A unified grounding view that ties moment retrieval, highlight detection, and browsing-style understanding together.",
+                       "problem":  "Temporal grounding tasks are often treated as separate problems even when they depend on the same underlying moment localization skill.",
+                       "method_or_setup":  "Presents a unified video-language temporal grounding framework for different query and localization settings.",
+                       "why_it_matters":  "It gives a clean baseline for seeing whether a model can actually find moments rather than just answer about them.",
+                       "key_points":  [
+                                          "Unifies multiple grounding-style tasks.",
+                                          "Useful for comparing retrieval and detection behavior.",
+                                          "Anchors the older temporal grounding literature."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with ProTeGe and Guidance to see how training and search differ.",
+                                                  "Check whether retrieval and highlight detection fail for the same reasons.",
+                                                  "Use it as a grounding baseline when discussing temporal faithfulness."
+                                              ],
+                       "figure":  "./assets/paper-figures/univtg/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "protege",
+                       "title":  "ProTeGe: Untrimmed Pretraining for Video Temporal Grounding by Video Temporal Grounding",
+                       "venue":  "CVPR",
+                       "year":  2023,
+                       "quick_takeaway":  "ProTeGe argues that pretraining on untrimmed videos can make boundary localization sharper.",
+                       "problem":  "Standard video pretraining does not necessarily teach the model where an event starts and ends.",
+                       "method_or_setup":  "Uses untrimmed video pretraining with a grounding-oriented objective to improve temporal boundary sensitivity.",
+                       "why_it_matters":  "If boundaries are weak, later temporal claims can look fluent while still being off in time.",
+                       "key_points":  [
+                                          "Focuses on untrimmed pretraining.",
+                                          "Targets boundary sensitivity directly.",
+                                          "Useful as an older grounding anchor."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with UniVTG to separate architecture from pretraining effects.",
+                                                  "Check whether better boundaries help hallucination resistance.",
+                                                  "Use it when arguing for data-centric temporal grounding."
+                                              ],
+                       "figure":  "./assets/paper-figures/protege/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "guidance",
+                       "title":  "Localizing Moments in Long Video Via Multimodal Guidance",
+                       "venue":  "ICCV",
+                       "year":  2023,
+                       "quick_takeaway":  "The paper uses multimodal guidance to prune long videos toward the relevant moment.",
+                       "problem":  "Long videos are too dense to search naively, so the model needs a way to narrow down the evidence.",
+                       "method_or_setup":  "Adds guidance signals that help localize moments in long videos by focusing the search space.",
+                       "why_it_matters":  "This is a practical reminder that temporal understanding often fails at retrieval before reasoning even starts.",
+                       "key_points":  [
+                                          "Guided pruning is the main idea.",
+                                          "Long-video search is the bottleneck.",
+                                          "Useful comparator for sparse-evidence methods."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with ScanOnce and lvhaystack on search efficiency.",
+                                                  "Ask whether pruning hurts recall of the right moment.",
+                                                  "Use it to frame long-video grounding as evidence selection."
+                                              ],
+                       "figure":  "./assets/paper-figures/guidance/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "scanonce",
+                       "title":  "Scanning Only Once: An End-to-end Framework for Fast Temporal Grounding in Long Videos",
+                       "venue":  "ICCV",
+                       "year":  2023,
+                       "quick_takeaway":  "ScanOnce pushes long-video grounding toward a one-pass, efficiency-first setup.",
+                       "problem":  "Repeated scanning over long videos is expensive and can amplify noisy search behavior.",
+                       "method_or_setup":  "Builds an end-to-end framework that scans the video only once for temporal grounding.",
+                       "why_it_matters":  "It is a strong reminder that speed and faithfulness can trade off in long-video understanding.",
+                       "key_points":  [
+                                          "Efficiency is the core objective.",
+                                          "One-pass inference changes the search tradeoff.",
+                                          "Useful long-video baseline."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with Guidance and lvhaystack on search strategy.",
+                                                  "Check whether faster grounding loses hard evidence.",
+                                                  "Use it when discussing long-video efficiency constraints."
+                                              ],
+                       "figure":  "./assets/paper-figures/scanonce/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "compositional",
+                       "title":  "Compositional Video Understanding with Spatiotemporal Structure-based Transformers",
+                       "venue":  "CVPR",
+                       "year":  2024,
+                       "quick_takeaway":  "This is a structure-first paper for compositional video understanding.",
+                       "problem":  "Compositional video reasoning breaks when models do not preserve spatial and temporal structure cleanly.",
+                       "method_or_setup":  "Uses a spatiotemporal structure-based transformer to improve compositional reasoning over video.",
+                       "why_it_matters":  "Structure can reduce shortcutting when the question depends on event order and object-state composition.",
+                       "key_points":  [
+                                          "Explicit structure is the main bias.",
+                                          "Useful for compositional generalization.",
+                                          "Good comparison point for later hallucination mitigation papers."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with MASH-VLM and STEP on architectural bias.",
+                                                  "Check whether structure helps order-sensitive failures.",
+                                                  "Use it as a selective comparison paper, not a primary anchor."
+                                              ],
+                       "figure":  "./assets/paper-figures/compositional/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "tadrobust",
+                       "title":  "Benchmarking the Robustness of Temporal Action Detection Models Against Temporal Corruptions",
+                       "venue":  "CVPR",
+                       "year":  2024,
+                       "quick_takeaway":  "TADRobust turns temporal corruptions into a robustness benchmark for action detection.",
+                       "problem":  "Temporal action detectors can look strong until the evidence is corrupted or shifted.",
+                       "method_or_setup":  "Applies temporal corruptions and measures how action detection models degrade under them.",
+                       "why_it_matters":  "Robustness under corruption is a useful lens for deciding whether a model truly uses temporal evidence.",
+                       "key_points":  [
+                                          "Focuses on temporal corruption stress tests.",
+                                          "Measures degradation, not just accuracy.",
+                                          "Good bridge to faithfulness thinking."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Borrow corruption ideas for video LLM evaluation.",
+                                                  "Compare robustness with benchmark-only performance.",
+                                                  "Use it when discussing missing or noisy temporal evidence."
+                                              ],
+                       "figure":  "./assets/paper-figures/tadrobust/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "videorefer",
+                       "title":  "VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "VideoRefer focuses on object-centric spatial-temporal understanding in video LLMs.",
+                       "problem":  "A lot of temporal error starts with wrong object-state tracking, not just wrong event order.",
+                       "method_or_setup":  "Provides a suite for spatial-temporal object understanding in video-language settings.",
+                       "why_it_matters":  "Object-centric tracking is a useful subproblem when you want to diagnose why temporal hallucination happens.",
+                       "key_points":  [
+                                          "Object-centric rather than pure event-centric.",
+                                          "Covers spatial-temporal relations.",
+                                          "Selective comparison paper for faithfulness."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with grounding and hallucination benchmarks.",
+                                                  "Check whether object tracking improves temporal consistency.",
+                                                  "Use it when the failure looks like state tracking, not just order confusion."
+                                              ],
+                       "figure":  "./assets/paper-figures/videorefer/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "debias",
+                       "title":  "Towards Debiasing Temporal Sentence Grounding in Video",
+                       "venue":  "arXiv",
+                       "year":  2021,
+                       "quick_takeaway":  "This is an early warning that dataset bias can make temporal grounding look better than it really is.",
+                       "problem":  "Annotation and dataset biases can let models exploit shortcuts instead of grounding the right moment.",
+                       "method_or_setup":  "Studies and mitigates bias sources in temporal sentence grounding datasets and setups.",
+                       "why_it_matters":  "It helps explain why benchmark progress may not reflect true temporal understanding.",
+                       "key_points":  [
+                                          "Bias diagnosis is the main contribution.",
+                                          "Important pathology anchor for grounding.",
+                                          "Useful when benchmark gains look too easy."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare with TempCompass on shortcut detection.",
+                                                  "Use it when discussing dataset bias and overfitting.",
+                                                  "Check whether your favorite benchmark is bias-sensitive."
+                                              ],
+                       "figure":  "./assets/paper-figures/debias/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "vidhalluc",
+                       "title":  "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A benchmark that turns temporal hallucination into a measurable failure mode across action, sequence, and scene transition.",
+                       "problem":  "The field needs to measure video hallucination directly, not only overall answer accuracy.",
+                       "method_or_setup":  "Builds 5,002 paired videos across three hallucination dimensions and evaluates whether models stay faithful to video evidence.",
+                       "why_it_matters":  "It is one of the most direct references for discussing temporal hallucination as a first-class evaluation target.",
+                       "key_points":  [
+                                          "Pairs are designed to be hallucination-prone.",
+                                          "Evaluation covers action, temporal sequence, and scene transition.",
+                                          "DINO-HEAL offers a training-free mitigation path."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Use it as the main benchmark when you want hallucination metrics.",
+                                                  "Check whether benchmark gains transfer to open-ended video understanding.",
+                                                  "Compare with TempCompass and Consistency to separate different temporal failure types."
+                                              ],
+                       "figure":  "./assets/paper-figures/vidhalluc/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "tsgvsurvey",
+                       "title":  "Temporal Sentence Grounding in Videos: A Survey and Future Directions",
+                       "venue":  "TPAMI",
+                       "year":  2023,
+                       "quick_takeaway":  "A survey anchor that gives the vocabulary and taxonomy for temporal sentence grounding.",
+                       "problem":  "The temporal grounding literature is large, but the task names and definitions are fragmented.",
+                       "method_or_setup":  "Summarizes the temporal sentence grounding field and its future directions.",
+                       "why_it_matters":  "Useful for framing, naming, and comparing older grounding papers without getting lost in terminology.",
+                       "key_points":  [
+                                          "Best for terminology and taxonomy.",
+                                          "Historical anchor rather than a method paper.",
+                                          "Useful for related-work framing."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Use it to orient newer grounding papers.",
+                                                  "Do not treat it as core evidence for hallucination claims.",
+                                                  "Mine it for task definitions and evaluation terms."
+                                              ],
+                       "figure":  "./assets/paper-figures/tsgvsurvey/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "eventsurvey",
+                       "title":  "A Survey of Video Datasets for Grounded Event Understanding",
+                       "venue":  "CVPRW",
+                       "year":  2024,
+                       "quick_takeaway":  "This survey maps the dataset landscape for grounded event understanding.",
+                       "problem":  "Event-centric video datasets are scattered across tasks, making it hard to know what is actually being measured.",
+                       "method_or_setup":  "Reviews video datasets and task framing for grounded event understanding.",
+                       "why_it_matters":  "It helps you separate true temporal reasoning from dataset-specific framing choices.",
+                       "key_points":  [
+                                          "Dataset landscape is the main focus.",
+                                          "Grounded events are broader than single-span grounding.",
+                                          "Useful survey anchor for task selection."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Use it when picking evaluation datasets.",
+                                                  "Compare with TSGV survey for terminology and scope.",
+                                                  "Check where temporal hallucination is actually measured."
+                                              ],
+                       "figure":  "./assets/paper-figures/eventsurvey/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "mashvlm",
+                       "title":  "MASH-VLM: Mitigating Action-Scene Hallucination in Video-LLMs through Disentangled Spatial-Temporal Representations",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "MASH-VLM argues that action-scene hallucination comes from entangled spatial-temporal features and positional bias, then attacks both directly.",
+                       "problem":  "Video models can infer the wrong action from scene context or infer the wrong scene from an observed action.",
+                       "method_or_setup":  "Uses DST-attention plus Harmonic-RoPE to separate spatial and temporal signals more cleanly.",
+                       "why_it_matters":  "Many temporal hallucinations are entanglement errors, where scene cues leak into event prediction.",
+                       "key_points":  [
+                                          "DST-attention masks spatial and temporal tokens separately.",
+                                          "Harmonic-RoPE reduces positional bias across token types.",
+                                          "UNSCENE is the main evaluation benchmark."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare it against benchmark-first papers like TempCompass and VidHalluc.",
+                                                  "Check whether disentangling helps longer multi-event reasoning.",
+                                                  "Use it as the main architecture paper for hallucination mitigation."
+                                              ],
+                       "figure":  "./assets/paper-figures/mashvlm/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   }
+               ]
+}

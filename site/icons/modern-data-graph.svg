@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Modern data graph research icon</title>
+  <desc id="desc">A geometric chart with connected nodes and a rising path.</desc>
+  <defs>
+    <linearGradient id="bg" x1="68" y1="52" x2="444" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ebf4f2"/>
+      <stop offset="1" stop-color="#d8e8e4"/>
+    </linearGradient>
+    <linearGradient id="line" x1="132" y1="360" x2="376" y2="144" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0c6c65"/>
+      <stop offset="1" stop-color="#2f7bb8"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="92" fill="url(#bg)"/>
+  <rect x="90" y="94" width="332" height="324" rx="44" fill="#ffffff" opacity="0.68"/>
+  <path d="M130 356h252" stroke="#96aba8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M130 356V154" stroke="#96aba8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M145 320l62-58 56 34 84-100 31 26" fill="none" stroke="url(#line)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="145" cy="320" r="16" fill="#0c6c65"/>
+  <circle cx="207" cy="262" r="16" fill="#d96c3f"/>
+  <circle cx="263" cy="296" r="16" fill="#0c6c65"/>
+  <circle cx="347" cy="196" r="16" fill="#2f7bb8"/>
+  <circle cx="378" cy="222" r="16" fill="#0c6c65"/>
+  <path d="M176 152h130" stroke="#b8c7c4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M176 188h82" stroke="#c9d5d2" stroke-width="10" stroke-linecap="round"/>
+  <path d="M176 224h108" stroke="#c9d5d2" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="256" cy="256" r="198" fill="none" stroke="#0c6c65" stroke-width="8" opacity="0.10"/>
+</svg>
