@@ -96,6 +96,11 @@
       "date": "2026-03-28",
       "action": "lesson_titles_shifted_to_seminar_language",
       "summary": "Changed lesson slide titles and section headers from teaching-meta wording to seminar-presentation wording such as Research Problem, Motivation and Framing, Method Overview, Experimental Findings, and Key Takeaways."
+    },
+    {
+      "date": "2026-04-01",
+      "action": "video_mme_added_to_site",
+      "summary": "Added Video-MME to the paper library, Week 1 roadmap, website quick-understand content, seminar lesson deck, local PDF library, and preview assets so it can be compared directly against TempCompass and MVBench."
     }
   ]
 }

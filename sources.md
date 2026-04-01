@@ -4,6 +4,7 @@ This workspace was seeded from primary sources gathered on March 26, 2026.
 
 ## Primary Sources Used
 - TempCompass: https://arxiv.org/abs/2403.00476
+- Video-MME: https://arxiv.org/abs/2405.21075
 - MVBench: https://openaccess.thecvf.com/content/CVPR2024/html/Li_MVBench_A_Comprehensive_Multi-modal_Video_Understanding_Benchmark_CVPR_2024_paper.html
 - TimeChat: https://openaccess.thecvf.com/content/CVPR2024/html/Ren_TimeChat_A_Time-sensitive_Multimodal_Large_Language_Model_for_Long_Video_CVPR_2024_paper.html
 - MovieChat: https://openaccess.thecvf.com/content/CVPR2024/html/Song_MovieChat_From_Dense_Token_to_Sparse_Memory_for_Long_Video_CVPR_2024_paper.html

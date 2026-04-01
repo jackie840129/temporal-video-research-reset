@@ -1,6 +1,6 @@
 ﻿{
     "schema_version":  1,
-    "generated_at":  "2026-03-27T02:48:53",
+    "generated_at":  "2026-04-01T00:12:35",
     "topic_focus":  "Temporal hallucination in video understanding",
     "papers":  [
                    {
@@ -23,6 +23,28 @@
                                                   "Use it as the first diagnostic lens before reading method papers."
                                               ],
                        "figure":  "./assets/paper-figures/tempcompass/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "videomme",
+                       "title":  "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis",
+                       "venue":  "arXiv",
+                       "year":  2024,
+                       "quick_takeaway":  "A field-standard benchmark for broad video analysis that is valuable because it is comprehensive, but less clean than TempCompass for isolating temporal evidence use.",
+                       "problem":  "The field lacked a comprehensive, carefully annotated benchmark for multimodal video analysis across domains, durations, and modality settings.",
+                       "method_or_setup":  "Builds a benchmark with 900 manually selected videos, 2,700 QA pairs, multiple duration bands, multiple visual domains, and modality settings that include subtitles and audio.",
+                       "why_it_matters":  "You need Video-MME because many later model papers report it, but you should read it next to TempCompass so broad benchmark success does not get mistaken for temporal validity.",
+                       "key_points":  [
+                                          "Covers broad video analysis rather than one narrowly temporal task.",
+                                          "Includes duration and modality variation, which makes it useful for realistic comparison.",
+                                          "Best used as a field-standard baseline before narrowing down to stricter temporal benchmarks."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Compare it directly against TempCompass and ask what each benchmark forces the model to use.",
+                                                  "Check whether a reported gain depends heavily on subtitles, audio, or long-context handling.",
+                                                  "Use it as the broad baseline before moving to temporal hallucination or temporal validity benchmarks."
+                                              ],
+                       "figure":  "./assets/paper-figures/videomme/preview.png",
                        "figure_caption":  "Paper first-page preview for quick scanning."
                    },
                    {
@@ -353,7 +375,7 @@
                                                   "Ask whether the structure actually improves faithfulness."
                                               ],
                        "figure":  "./assets/paper-figures/videoespresso/preview.png",
-                       "figure_caption":  "First-page preview generated from the PDF."
+                       "figure_caption":  "Paper first-page preview for quick scanning."
                    },
                    {
                        "id":  "univtg",

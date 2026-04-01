@@ -3,10 +3,10 @@
 Assumed budget: `8-10 hours/week`
 
 ## Week 1
-- Read `TempCompass`, `MVBench`, `Temporal Sentence Grounding in Videos: A Survey`
+- Read `TempCompass`, `Video-MME`, `MVBench`
 - Build your first pass taxonomy in the field map
 - Write two full paper notes
-- Write one half-page memo: "What counts as temporal understanding?"
+- Write one half-page memo: "What changes when a benchmark is broad versus truly temporal?"
 
 ## Week 2
 - Read `TimeChat`, `MovieChat`, `UniVTG`

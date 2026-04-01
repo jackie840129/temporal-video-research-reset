@@ -2,7 +2,7 @@ window.RESEARCH_DATA = {
   summary: {
     title: "Temporal Video Understanding Research Reset",
     description: "A browser-first workspace for rebuilding research taste around temporal video understanding.",
-    papers: 26,
+    papers: 29,
     anchors: 6,
     weeks: 10,
     topCluster: "Temporal search + evidence reasoning + benchmark debiasing"
@@ -16,6 +16,7 @@ window.RESEARCH_DATA = {
   ],
   papers: [
     { id: "tempcompass", tier: "A", year: 2024, venue: "ACL", title: "TempCompass: Do Video LLMs Really Understand Videos?", category: "evaluation", focus: "diagnostic temporal benchmark", why: "Best first benchmark paper for isolating real temporal perception.", link: "https://arxiv.org/abs/2403.00476", anchor: true },
+    { id: "videomme", tier: "A", year: 2024, venue: "arXiv", title: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis", category: "evaluation", focus: "comprehensive multimodal video benchmark", why: "Field-standard benchmark for calibrating broad video understanding before narrowing down to temporal validity.", link: "https://arxiv.org/abs/2405.21075", anchor: false },
     { id: "mvbench", tier: "A", year: 2024, venue: "CVPR", title: "MVBench: A Comprehensive Multi-modal Video Understanding Benchmark", category: "evaluation", focus: "broad benchmark", why: "Good wide-angle benchmark for how current MLLMs fail on time-sensitive tasks.", link: "https://openaccess.thecvf.com/content/CVPR2024/html/Li_MVBench_A_Comprehensive_Multi-modal_Video_Understanding_Benchmark_CVPR_2024_paper.html", anchor: false },
     { id: "timechat", tier: "A", year: 2024, venue: "CVPR", title: "TimeChat: A Time-sensitive Multimodal Large Language Model for Long Video Understanding", category: "localization", focus: "timestamp-aware video LLM", why: "Strong anchor for explicit time binding and temporal localization.", link: "https://openaccess.thecvf.com/content/CVPR2024/html/Ren_TimeChat_A_Time-sensitive_Multimodal_Large_Language_Model_for_Long_Video_CVPR_2024_paper.html", anchor: true },
     { id: "moviechat", tier: "A", year: 2024, venue: "CVPR", title: "MovieChat: From Dense Token to Sparse Memory for Long Video Understanding", category: "longvideo", focus: "memory design", why: "Classic memory paper for long-video understanding.", link: "https://openaccess.thecvf.com/content/CVPR2024/html/Song_MovieChat_From_Dense_Token_to_Sparse_Memory_for_Long_Video_CVPR_2024_paper.html", anchor: true },
@@ -45,7 +46,7 @@ window.RESEARCH_DATA = {
     { id: "eventsurvey", tier: "C", year: 2024, venue: "CVPRW", title: "A Survey of Video Datasets for Grounded Event Understanding", category: "evaluation", focus: "dataset survey", why: "Useful survey of event-centric dataset framing.", link: "https://openaccess.thecvf.com/content/CVPR2024W/VDU/html/Sanders_A_Survey_of_Video_Datasets_for_Grounded_Event_Understanding_CVPRW_2024_paper.html", anchor: false }
   ],
   weeks: [
-    { week: 1, title: "Define what counts as temporal understanding", reads: ["TempCompass", "MVBench", "Temporal Sentence Grounding Survey"], deliverable: "First-pass taxonomy and two deep paper notes." },
+    { week: 1, title: "Define what counts as temporal understanding", reads: ["TempCompass", "Video-MME", "MVBench"], deliverable: "First-pass taxonomy and one benchmark-comparison memo." },
     { week: 2, title: "Compare time binding, memory, and grounding", reads: ["TimeChat", "MovieChat", "UniVTG"], deliverable: "Cluster notes on timestamps vs memory vs grounding." },
     { week: 3, title: "Find benchmark pathologies", reads: ["MLVU", "LongVideoBench", "Debiasing Temporal Grounding"], deliverable: "Memo on how benchmarks overestimate temporal ability." },
     { week: 4, title: "Reframe long video as search and evidence", reads: ["LV-Haystack", "ViTED", "Consistency of Video LLMs"], deliverable: "Open-problems tracker starts." },

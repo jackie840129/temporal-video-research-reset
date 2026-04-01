@@ -219,6 +219,14 @@
                        "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024W/VDU/papers/Sanders_A_Survey_of_Video_Datasets_for_Grounded_Event_Understanding_CVPRW_2024_paper.pdf"
                    },
                    {
+                       "id":  "videomme",
+                       "title":  "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis",
+                       "status":  "present",
+                       "note":  "downloaded on 2026-04-01",
+                       "pdf_file":  "pdfs/videomme.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2405.21075.pdf"
+                   },
+                   {
                        "id":  "mashvlm",
                        "title":  "MASH-VLM: Mitigating Action-Scene Hallucination in Video-LLMs through Disentangled Spatial-Temporal Representations",
                        "status":  "present",
