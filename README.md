@@ -31,6 +31,8 @@ Read the paper first, inspect code only to verify implementation choices, and wr
 ## GitHub Pages Deployment
 This repo already contains a GitHub Pages workflow at [.github/workflows/deploy-pages.yml](/C:/Users/jackieliu/Documents/Research/temporal-video-research-reset/.github/workflows/deploy-pages.yml) that publishes the `site/` folder as a static website.
 
+Website URL: [https://jackie840129.github.io/temporal-video-research-reset/](https://jackie840129.github.io/temporal-video-research-reset/)
+
 Use this setup flow:
 
 1. Create a GitHub repository and push this project to the `main` branch.
