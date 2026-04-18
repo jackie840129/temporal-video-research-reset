@@ -1,1 +1,4 @@
-﻿
+﻿vap	failed	Video Active Perception: Efficient Inference-Time Long-Form Video Understanding with Vision-Language Models	遠端伺服器傳回一個錯誤: (403) 禁止。
+vilamp	failed	Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation	遠端伺服器傳回一個錯誤: (403) 禁止。
+coselect	failed	Training-Free Adaptive Frame Selection for Video-Language Understanding	遠端伺服器傳回一個錯誤: (403) 禁止。
+rmllava	failed	RM-LLaVA: An Efficient Training-Free Video Understanding Framework with Redundancy-Minimized Frame Selection	遠端伺服器傳回一個錯誤: (403) 禁止。

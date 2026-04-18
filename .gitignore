@@ -2,3 +2,13 @@ server-out.log
 server-err.log
 Thumbs.db
 .DS_Store
+
+# Local Codex context and private research state
+memory.md
+CODEX_WORKFLOW.md
+records/paper-records.json
+records/paper-inbox.json
+records/topic-focus.json
+records/update-log.json
+trackers/open-problems.md
+trackers/idea-tracker.md

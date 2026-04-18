@@ -1,6 +1,6 @@
 ﻿{
     "schema_version":  1,
-    "generated_at":  "2026-04-01T00:12:35",
+    "generated_at":  "2026-04-18T00:11:14",
     "topic_focus":  "Temporal hallucination in video understanding",
     "papers":  [
                    {
@@ -554,28 +554,6 @@
                        "figure_caption":  "Paper first-page preview for quick scanning."
                    },
                    {
-                       "id":  "vidhalluc",
-                       "title":  "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
-                       "venue":  "CVPR",
-                       "year":  2025,
-                       "quick_takeaway":  "A benchmark that turns temporal hallucination into a measurable failure mode across action, sequence, and scene transition.",
-                       "problem":  "The field needs to measure video hallucination directly, not only overall answer accuracy.",
-                       "method_or_setup":  "Builds 5,002 paired videos across three hallucination dimensions and evaluates whether models stay faithful to video evidence.",
-                       "why_it_matters":  "It is one of the most direct references for discussing temporal hallucination as a first-class evaluation target.",
-                       "key_points":  [
-                                          "Pairs are designed to be hallucination-prone.",
-                                          "Evaluation covers action, temporal sequence, and scene transition.",
-                                          "DINO-HEAL offers a training-free mitigation path."
-                                      ],
-                       "next_after_summary":  [
-                                                  "Use it as the main benchmark when you want hallucination metrics.",
-                                                  "Check whether benchmark gains transfer to open-ended video understanding.",
-                                                  "Compare with TempCompass and Consistency to separate different temporal failure types."
-                                              ],
-                       "figure":  "./assets/paper-figures/vidhalluc/preview.png",
-                       "figure_caption":  "Paper first-page preview for quick scanning."
-                   },
-                   {
                        "id":  "tsgvsurvey",
                        "title":  "Temporal Sentence Grounding in Videos: A Survey and Future Directions",
                        "venue":  "TPAMI",
@@ -595,6 +573,28 @@
                                                   "Mine it for task definitions and evaluation terms."
                                               ],
                        "figure":  "./assets/paper-figures/tsgvsurvey/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "vidhalluc",
+                       "title":  "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
+                       "venue":  "CVPR",
+                       "year":  2025,
+                       "quick_takeaway":  "A benchmark that turns temporal hallucination into a measurable failure mode across action, sequence, and scene transition.",
+                       "problem":  "The field needs to measure video hallucination directly, not only overall answer accuracy.",
+                       "method_or_setup":  "Builds 5,002 paired videos across three hallucination dimensions and evaluates whether models stay faithful to video evidence.",
+                       "why_it_matters":  "It is one of the most direct references for discussing temporal hallucination as a first-class evaluation target.",
+                       "key_points":  [
+                                          "Pairs are designed to be hallucination-prone.",
+                                          "Evaluation covers action, temporal sequence, and scene transition.",
+                                          "DINO-HEAL offers a training-free mitigation path."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Use it as the main benchmark when you want hallucination metrics.",
+                                                  "Check whether benchmark gains transfer to open-ended video understanding.",
+                                                  "Compare with TempCompass and Consistency to separate different temporal failure types."
+                                              ],
+                       "figure":  "./assets/paper-figures/vidhalluc/preview.png",
                        "figure_caption":  "Paper first-page preview for quick scanning."
                    },
                    {
@@ -639,6 +639,116 @@
                                                   "Use it as the main architecture paper for hallucination mitigation."
                                               ],
                        "figure":  "./assets/paper-figures/mashvlm/preview.png",
+                       "figure_caption":  "Paper first-page preview for quick scanning."
+                   },
+                   {
+                       "id":  "vap",
+                       "title":  "Video Active Perception: Efficient Inference-Time Long-Form Video Understanding with Vision-Language Models",
+                       "venue":  "OpenReview",
+                       "year":  2024,
+                       "quick_takeaway":  "Strong read if you want query-conditioned keyframe selection without retraining the base video model.",
+                       "problem":  "Long videos create memory and compression bottlenecks even when the right evidence is already known.",
+                       "method_or_setup":  "Focuses on memory, compression, or long-context handling for video evidence.",
+                       "why_it_matters":  "Useful for testing whether failure comes from memory or compression limits rather than weak reasoning alone.",
+                       "key_points":  [
+                                          "Main focus: active perception frame selection.",
+                                          "Category: longvideo with OpenReview 2024 context.",
+                                          "Best used as a B-tier reference for strong read if you want query-conditioned keyframe selection without retraining the base video model."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Check whether memory or compression is the real bottleneck.",
+                                                  "Compare dense context against compressed context.",
+                                                  "Use it to refine long-video systems assumptions."
+                                              ],
+                       "figure":  "",
+                       "figure_caption":  ""
+                   },
+                   {
+                       "id":  "vilamp",
+                       "title":  "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation",
+                       "venue":  "ICML",
+                       "year":  2025,
+                       "quick_takeaway":  "Useful for seeing how keyframe selection and patch-level compression can work together under a fixed compute budget.",
+                       "problem":  "Long videos create memory and compression bottlenecks even when the right evidence is already known.",
+                       "method_or_setup":  "Focuses on memory, compression, or long-context handling for video evidence.",
+                       "why_it_matters":  "Useful for testing whether failure comes from memory or compression limits rather than weak reasoning alone.",
+                       "key_points":  [
+                                          "Main focus: hierarchical keyframe selection.",
+                                          "Category: longvideo with ICML 2025 context.",
+                                          "Best used as a B-tier reference for useful for seeing how keyframe selection and patch-level compression can work together under a fixed compute budget."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Check whether memory or compression is the real bottleneck.",
+                                                  "Compare dense context against compressed context.",
+                                                  "Use it to refine long-video systems assumptions."
+                                              ],
+                       "figure":  "",
+                       "figure_caption":  ""
+                   },
+                   {
+                       "id":  "coselect",
+                       "title":  "Training-Free Adaptive Frame Selection for Video-Language Understanding",
+                       "venue":  "OpenReview",
+                       "year":  2025,
+                       "quick_takeaway":  "Directly studies how a plug-in selector can outperform uniform sparse sampling for video-language models.",
+                       "problem":  "Long videos create memory and compression bottlenecks even when the right evidence is already known.",
+                       "method_or_setup":  "Focuses on memory, compression, or long-context handling for video evidence.",
+                       "why_it_matters":  "Useful for testing whether failure comes from memory or compression limits rather than weak reasoning alone.",
+                       "key_points":  [
+                                          "Main focus: query-guided adaptive frame sampling.",
+                                          "Category: longvideo with OpenReview 2025 context.",
+                                          "Best used as a B-tier reference for directly studies how a plug-in selector can outperform uniform sparse sampling for video-language models."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Check whether memory or compression is the real bottleneck.",
+                                                  "Compare dense context against compressed context.",
+                                                  "Use it to refine long-video systems assumptions."
+                                              ],
+                       "figure":  "",
+                       "figure_caption":  ""
+                   },
+                   {
+                       "id":  "rmllava",
+                       "title":  "RM-LLaVA: An Efficient Training-Free Video Understanding Framework with Redundancy-Minimized Frame Selection",
+                       "venue":  "OpenReview",
+                       "year":  2025,
+                       "quick_takeaway":  "Useful when the main issue is wasting budget on near-duplicate frames rather than lacking total context length.",
+                       "problem":  "Long videos create memory and compression bottlenecks even when the right evidence is already known.",
+                       "method_or_setup":  "Focuses on memory, compression, or long-context handling for video evidence.",
+                       "why_it_matters":  "Useful for testing whether failure comes from memory or compression limits rather than weak reasoning alone.",
+                       "key_points":  [
+                                          "Main focus: redundancy-minimized frame selection.",
+                                          "Category: longvideo with OpenReview 2025 context.",
+                                          "Best used as a B-tier reference for useful when the main issue is wasting budget on near-duplicate frames rather than lacking total context length."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Check whether memory or compression is the real bottleneck.",
+                                                  "Compare dense context against compressed context.",
+                                                  "Use it to refine long-video systems assumptions."
+                                              ],
+                       "figure":  "",
+                       "figure_caption":  ""
+                   },
+                   {
+                       "id":  "adaptivegreedy",
+                       "title":  "Adaptive Greedy Frame Selection for Long Video Understanding",
+                       "venue":  "arXiv",
+                       "year":  2026,
+                       "quick_takeaway":  "A very recent paper that explicitly balances query relevance and temporal coverage instead of treating frame selection as pure similarity ranking.",
+                       "problem":  "Long videos create memory and compression bottlenecks even when the right evidence is already known.",
+                       "method_or_setup":  "Focuses on memory, compression, or long-context handling for video evidence.",
+                       "why_it_matters":  "Useful for testing whether failure comes from memory or compression limits rather than weak reasoning alone.",
+                       "key_points":  [
+                                          "Main focus: submodular frame coverage under budget.",
+                                          "Category: longvideo with arXiv 2026 context.",
+                                          "Best used as a B-tier reference for a very recent paper that explicitly balances query relevance and temporal coverage instead of treating frame selection as pure similarity ranking."
+                                      ],
+                       "next_after_summary":  [
+                                                  "Check whether memory or compression is the real bottleneck.",
+                                                  "Compare dense context against compressed context.",
+                                                  "Use it to refine long-video systems assumptions."
+                                              ],
+                       "figure":  "./assets/paper-figures/adaptivegreedy/preview.png",
                        "figure_caption":  "Paper first-page preview for quick scanning."
                    }
                ]

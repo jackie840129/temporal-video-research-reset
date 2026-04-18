@@ -106,9 +106,10 @@ function Category-Core-Insight {
   param($Paper)
   switch ($Paper.category) {
     "evaluation" { return "Read this paper as a benchmark-design lesson: before trusting any score gain, ask whether the benchmark really forces temporal evidence instead of static shortcuts or language priors." }
-    "localization" { return "The core insight is that understanding is incomplete until the answer is anchored to the right time span; fluent language is not enough." }
-    "longvideo" { return "The real lesson is that many long-video failures begin before reasoning: if the system cannot find or keep the right evidence, stronger reasoning will not rescue it." }
-    "causal" { return "This paper matters because it treats temporal reasoning as a structured relation problem instead of hoping a large model will infer event dependencies implicitly." }
+    "grounding" { return "The core insight is that understanding is incomplete until the answer is anchored to the right time span; fluent language is not enough." }
+    "frame_selection" { return "The key lesson is that under a fixed budget, which frames are selected can matter more than adding more generic long-video context." }
+    "longvideo" { return "The real lesson is that long-video systems live or die by memory and compression quality, not only by raw context length." }
+    "reasoning" { return "This paper matters because it treats temporal reasoning as a structured relation problem instead of hoping a large model will infer event dependencies implicitly." }
     "ordering" { return "The paper sharpens an important point: many apparent reasoning failures are actually failures to represent order, transition, or duration in a stable way." }
     default { return "The useful takeaway is not only the final score but the way the paper turns a vague temporal ability into a concrete and testable research claim." }
   }
@@ -118,9 +119,10 @@ function Category-Reader-Value {
   param($Paper)
   switch ($Paper.category) {
     "evaluation" { return "Use this paper to calibrate what should count as a real temporal improvement before you read stronger method papers." }
-    "localization" { return "Use this paper to sharpen your taste for temporal grounding: not just whether the answer sounds right, but whether it is tied to the correct span." }
-    "longvideo" { return "This paper helps you separate the long-video pipeline into search, compression, memory, and reasoning, which makes later papers easier to place." }
-    "causal" { return "This paper is useful when you want to distinguish event-relation understanding from generic video-language fluency." }
+    "grounding" { return "Use this paper to sharpen your taste for temporal grounding: not just whether the answer sounds right, but whether it is tied to the correct span." }
+    "frame_selection" { return "This paper is useful when you want to decide how a small or budget-limited model should spend its few available frames." }
+    "longvideo" { return "This paper helps you separate the long-video pipeline into compression, memory, and reasoning, which makes later papers easier to place." }
+    "reasoning" { return "This paper is useful when you want to distinguish event-relation understanding from generic video-language fluency." }
     "ordering" { return "This paper helps you separate order confusion from broader reasoning failure, which is valuable when analyzing temporal hallucination." }
     default { return "This paper gives you a cleaner mental model for the specific temporal problem the authors want to isolate." }
   }
@@ -130,9 +132,10 @@ function Category-Method-Lens {
   param($Paper)
   switch ($Paper.category) {
     "evaluation" { return "For benchmark papers, ask which shortcuts are blocked and which temporal evidence is made unavoidable." }
-    "localization" { return "For localization papers, watch how the model binds text, video segments, and time boundaries together." }
-    "longvideo" { return "For long-video papers, focus first on the evidence pipeline: scanning, retrieval, compression, and memory." }
-    "causal" { return "For causal and compositional papers, track how the method preserves event relations, states, or evidence chains." }
+    "grounding" { return "For grounding papers, watch how the model binds text, video segments, and time boundaries together." }
+    "frame_selection" { return "For frame-selection papers, focus first on the evidence pipeline: candidate generation, relevance scoring, diversity, and budget allocation." }
+    "longvideo" { return "For long-video papers, focus first on compression, memory, and context handling rather than only final answer quality." }
+    "reasoning" { return "For reasoning papers, track how the method preserves event relations, states, or evidence chains." }
     "ordering" { return "For ordering papers, check whether sequence, transition, and duration are represented explicitly or only implied." }
     default { return "Identify the exact temporal bottleneck the design is supposed to fix before getting lost in implementation detail." }
   }
@@ -142,9 +145,10 @@ function Category-Experiment-Lens {
   param($Paper)
   switch ($Paper.category) {
     "evaluation" { return "The key question is not leaderboard position but whether the benchmark exposes the intended temporal failure mode." }
-    "localization" { return "The most important result is whether the answer lands on the right temporal span instead of merely sounding more complete." }
-    "longvideo" { return "Ask whether the gain comes from better evidence search and retention or simply from more context budget." }
-    "causal" { return "Check whether the experiments really show better relation understanding rather than a broad gain from extra supervision." }
+    "grounding" { return "The most important result is whether the answer lands on the right temporal span instead of merely sounding more complete." }
+    "frame_selection" { return "Ask whether the gain comes from better selected evidence rather than from a larger effective token budget or benchmark-specific bias." }
+    "longvideo" { return "Ask whether the gain comes from better compression or memory rather than simply from more context budget." }
+    "reasoning" { return "Check whether the experiments really show better relation understanding rather than a broad gain from extra supervision." }
     "ordering" { return "Read the result tables through sequence-sensitive cases: if order and transition cases do not improve, temporal reasoning is still weak." }
     default { return "Use the experiments to test the paper's main claim directly, not to admire a large collection of secondary gains." }
   }
@@ -161,9 +165,10 @@ function Category-Thinking-Points {
   }
   switch ($Paper.category) {
     "evaluation" { $items += "Would improvement here transfer to more open-ended video reasoning, or is it tightly coupled to the benchmark design?" }
-    "localization" { $items += "If localization becomes more accurate, does answer faithfulness improve too, or only the metric?" }
-    "longvideo" { $items += "If evidence search fails, is there any realistic way for downstream reasoning to recover?" }
-    "causal" { $items += "Is the structural design helping the model reason better, or mainly making the supervision easier to learn?" }
+    "grounding" { $items += "If localization becomes more accurate, does answer faithfulness improve too, or only the metric?" }
+    "frame_selection" { $items += "If the selector sees the wrong frames, is there any realistic way for downstream reasoning to recover?" }
+    "longvideo" { $items += "If compression is too aggressive, how much reasoning quality is lost before the model even starts answering?" }
+    "reasoning" { $items += "Is the structural design helping the model reason better, or mainly making the supervision easier to learn?" }
     "ordering" { $items += "When the model fails on order-sensitive cases, is the failure visual, conceptual, or both?" }
   }
   return $items

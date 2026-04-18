@@ -34,6 +34,7 @@ const LABELS = {
 const NAV_TITLES = {
   dashboard: "\u7e3d\u89bd",
   papers: "Papers",
+  frameSelection: "Frame selection",
   roadmap: "10 \u9031\u8a08\u756b",
   inbox: "\u6536\u4ef6\u5323",
   taskboard: "\u672c\u9031\u4efb\u52d9\u677f",
@@ -44,6 +45,7 @@ const NAV_TITLES = {
 const views = {
   dashboard: byId("view-dashboard"),
   papers: byId("view-papers"),
+  frameSelection: byId("view-frameSelection"),
   roadmap: byId("view-roadmap"),
   inbox: byId("view-inbox"),
   taskboard: byId("view-taskboard"),
@@ -139,6 +141,7 @@ function applyStaticLabels() {
 function renderAll() {
   renderDashboard();
   renderPapers();
+  renderFrameSelection();
   renderRoadmap();
   renderInbox();
   renderTaskboard();
@@ -190,8 +193,11 @@ function renderDashboard() {
         </div>
       </div>
       <div class="card">
-        <p class="eyebrow">\u76ee\u524d\u4e3b\u984c</p>
-        <h3>${focus.primary_topic}</h3>
+        <div class="section-head">
+          <div><p class="eyebrow">\u76ee\u524d\u4e3b\u984c</p><h3>${focus.primary_topic}</h3></div>
+          <span class="tag">${focus.tagLabel}</span>
+        </div>
+        ${renderTopicFocusSelector("dashboard-topic-focus")}
         <p class="muted">${focus.summary}</p>
         <div class="tag-row">${focus.practical_failure_modes.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>
       </div>
@@ -213,7 +219,7 @@ function renderDashboard() {
         </div>
       </div>
       <div class="card">
-        <div class="section-head"><div><p class="eyebrow">Temporal Hallucination</p><h3>\u91cd\u9ede\u8ad6\u6587</h3></div></div>
+        <div class="section-head"><div><p class="eyebrow">${escapeHtml(focus.tagLabel)}</p><h3>\u91cd\u9ede\u8ad6\u6587</h3></div></div>
         <div class="cluster-list">
           ${focusPapers.map((paper) => `
             <article class="cluster-item clickable" data-paper="${paper.id}">
@@ -242,20 +248,23 @@ function renderDashboard() {
     renderPapers();
     setView("papers");
   }));
+  bindTopicFocusSelector(views.dashboard);
 }
 
 function renderPapers() {
   const papers = filteredPapers();
   const selectedId = papers.find((paper) => paper.id === state.selectedPaperId)?.id || (papers[0] && papers[0].id) || data.papers[0].id;
   const focus = topicFocus();
+  const availableTags = paperTagDefinitionsForList(papers);
 
   views.papers.innerHTML = `
     ${syncBanner("inline")}
     <section class="topic-spotlight">
       <div class="section-head">
         <div><p class="eyebrow">Topic focus</p><h3>${focus.primary_topic}</h3></div>
-        <span class="tag">temporal hallucination</span>
+        <span class="tag">${focus.tagLabel}</span>
       </div>
+      ${renderTopicFocusSelector("papers-topic-focus")}
       <p class="muted">${focus.summary}</p>
       <div class="tag-row">${focus.practical_failure_modes.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("")}</div>
       <div class="tag-row">${focusSeedPapers().slice(0, 4).map((paper) => `<button class="secondary-btn" data-focus-paper="${paper.id}">${paper.title}</button>`).join("")}</div>
@@ -267,6 +276,10 @@ function renderPapers() {
       <select id="category-filter" class="select-input">
         <option value="all">All categories</option>
         ${data.clusters.map((cluster) => `<option value="${cluster.id}" ${categoryFilter() === cluster.id ? "selected" : ""}>${cluster.name}</option>`).join("")}
+      </select>
+      <select id="paper-tag-filter" class="select-input">
+        <option value="all">All mechanisms</option>
+        ${availableTags.map((tag) => `<option value="${tag.id}" ${paperTagFilter() === tag.id ? "selected" : ""}>${tag.name}</option>`).join("")}
       </select>
     </div>
     <div class="papers-layout">
@@ -284,6 +297,7 @@ function renderPapers() {
                 ${paper.anchor ? '<span class="tag">anchor</span>' : ""}
                 ${pill(statusOf(paper.id))}
               </div>
+              ${paperTags(paper).length ? `<div class="tag-row">${paperTags(paper).slice(0, 3).map((tagId) => `<span class="tag">${paperTagName(tagId)}</span>`).join("")}</div>` : ""}
             </article>
           `).join("") : '<p class="muted">No papers match the current filters.</p>'}
         </div>
@@ -317,6 +331,12 @@ function renderPapers() {
     saveState();
     renderPapers();
   });
+  byId("paper-tag-filter").addEventListener("change", (event) => {
+    state.weekPaperIds = [];
+    state.paperTagFilter = event.target.value;
+    saveState();
+    renderPapers();
+  });
   qsa(views.papers, "[data-paper]").forEach((node) => node.addEventListener("click", () => {
     state.selectedPaperId = node.dataset.paper;
     saveState();
@@ -327,6 +347,7 @@ function renderPapers() {
     saveState();
     renderPapers();
   }));
+  bindTopicFocusSelector(views.papers);
   renderPaperDetail(selectedId);
 }
 
@@ -350,8 +371,9 @@ function renderPaperDetail(paperId) {
         <div class="meta-row">
           <span class="tag">${paper.venue} ${paper.year}</span>
           <span class="tag">${clusterName(paper.category)}</span>
-          <span class="tag">${focusRelated(paper) ? "hallucination-related" : "general"}</span>
+          <span class="tag">${focusRelated(paper) ? `${topicFocus().tagLabel}-related` : "general"}</span>
         </div>
+        ${paperTags(paper).length ? `<div class="tag-row">${paperTags(paper).map((tagId) => `<span class="tag">${paperTagName(tagId)}</span>`).join("")}</div>` : ""}
         <p>${paper.why}</p>
         <div class="status-buttons">${["want", "reading", "read", "pause", "not_now"].map((key) => `<button class="status-btn ${status === key ? "active" : ""}" data-status-set="${key}">${LABELS.status[key]}</button>`).join("")}</div>
         <div class="status-buttons">
@@ -479,6 +501,69 @@ function renderRoadmap() {
   }));
 }
 
+function renderFrameSelection() {
+  const frameSelection = data.frameSelection || { title: "Frame selection", description: "", prompt: "", groups: [] };
+  const focus = topicFocus();
+  views.frameSelection.innerHTML = `
+    ${syncBanner("soft")}
+    <section class="topic-spotlight">
+      <div class="section-head">
+        <div><p class="eyebrow">Focused reading lane</p><h3>${escapeHtml(frameSelection.title)}</h3></div>
+        <span class="tag">small-model efficiency</span>
+      </div>
+      <div class="tag-row">
+        <button class="secondary-btn ${focus.mode === "frame_selection" ? "active-soft" : ""}" data-topic-focus-preset="frame_selection">Use this as current topic focus</button>
+      </div>
+      <p class="muted">${escapeHtml(frameSelection.description || "")}</p>
+      <div class="tag-row">
+        <span class="tag">same paper detail flow</span>
+        <span class="tag">4B-friendly</span>
+        <span class="tag">uniform 8-frame baseline</span>
+      </div>
+      <p class="muted">${escapeHtml(frameSelection.prompt || "")}</p>
+    </section>
+    <section class="dashboard-grid">
+      ${(frameSelection.groups || []).map((group) => `
+        <div class="card">
+          <div class="section-head">
+            <div><p class="eyebrow">Frame selection group</p><h3>${escapeHtml(group.name)}</h3></div>
+            <span class="tag">${(group.papers || []).length} papers</span>
+          </div>
+          <p class="muted">${escapeHtml(group.takeaway || "")}</p>
+          <div class="cluster-list">
+            ${(group.papers || []).map((paperId) => {
+              const paper = findPaper(paperId);
+              return `
+                <article class="cluster-item clickable" data-frame-paper="${paper.id}">
+                  <div class="section-head">
+                    <h4>${escapeHtml(paper.title)}</h4>
+                    <span class="tag">${escapeHtml(paper.venue)} ${escapeHtml(paper.year)}</span>
+                  </div>
+                  <p>${escapeHtml(paper.why)}</p>
+                  <div class="tag-row">
+                    <span class="tag">${escapeHtml(paper.focus)}</span>
+                    <span class="tag">${escapeHtml(clusterName(paper.category))}</span>
+                    ${pill(statusOf(paper.id))}
+                  </div>
+                </article>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </section>
+  `;
+
+  qsa(views.frameSelection, "[data-frame-paper]").forEach((node) => node.addEventListener("click", () => {
+    state.weekPaperIds = [];
+    state.selectedPaperId = node.dataset.framePaper;
+    saveState();
+    renderPapers();
+    setView("papers");
+  }));
+  bindTopicFocusSelector(views.frameSelection);
+}
+
 function renderInbox() {
   const items = inboxItems();
   const focus = topicFocus();
@@ -490,7 +575,7 @@ function renderInbox() {
         <p class="muted">\u628a\u4f60\u5728\u5176\u4ed6\u5730\u65b9\u770b\u5230\u7684 paper \u8cbc\u9032\u4f86\u3002API \u53ef\u7528\u6642\u6703\u5beb\u9032\u5c08\u6848\u7d00\u9304\uff0c\u4e0d\u53ef\u7528\u6642\u6703\u5148\u5b58\u5728\u672c\u6a5f\u3002</p>
         <div class="topic-spotlight compact">
           <div class="section-head"><div><p class="eyebrow">\u76ee\u524d\u7126\u9ede</p><h4>${focus.primary_topic}</h4></div><span class="tag">topic focus</span></div>
-          <p class="muted">Good candidates usually mention temporal hallucination, order confusion, unstable grounding, or unsupported time claims.</p>
+          <p class="muted">${focus.mode === "frame_selection" ? "Good candidates usually mention adaptive sampling, keyframe selection, evidence retrieval, redundancy reduction, or budget-aware coverage." : "Good candidates usually mention temporal hallucination, order confusion, unstable grounding, or unsupported time claims."}</p>
         </div>
         <form id="inbox-form" class="inbox-form">
           <div class="form-grid">
@@ -835,6 +920,7 @@ function promptContext() {
   const filters = [];
   if (tierFilter() !== "All") filters.push(`tier=${tierFilter()}`);
   if (categoryFilter() !== "all") filters.push(`category=${clusterName(categoryFilter())}`);
+  if (paperTagFilter() !== "all") filters.push(`mechanism=${paperTagName(paperTagFilter())}`);
   if (statusFilter() !== "all") filters.push(`status=${statusFilter()}`);
   if ((state.paperQuery || "").trim()) filters.push(`query=${state.paperQuery.trim()}`);
   return {
@@ -953,6 +1039,7 @@ function handleTaskAction(action, paperId, weekNo) {
   if (action === "paper" && paperId) {
     state.selectedPaperId = paperId;
     state.categoryFilter = findPaper(paperId).category;
+    state.paperTagFilter = "all";
     saveState();
     renderPapers();
     setView("papers");
@@ -978,6 +1065,7 @@ function openWeekPapers(weekNo) {
   state.tierFilter = "All";
   state.paperStatusFilter = "all";
   state.categoryFilter = "all";
+  state.paperTagFilter = "all";
   state.selectedPaperId = list[0] ? list[0].id : data.papers[0].id;
   saveState();
   renderPapers();
@@ -992,10 +1080,11 @@ function filteredPapers() {
   const query = (state.paperQuery || "").trim().toLowerCase();
   const weekPaperIds = Array.isArray(state.weekPaperIds) ? state.weekPaperIds : [];
   return data.papers.filter((paper) => {
-    const haystack = `${paper.title} ${paper.venue} ${paper.focus} ${paper.why}`.toLowerCase();
+    const haystack = `${paper.title} ${paper.venue} ${paper.focus} ${paper.why} ${paperTags(paper).map(paperTagName).join(" ")}`.toLowerCase();
     return (!weekPaperIds.length || weekPaperIds.includes(paper.id))
       && (tierFilter() === "All" || paper.tier === tierFilter())
       && (categoryFilter() === "all" || paper.category === categoryFilter())
+      && (paperTagFilter() === "all" || paperTags(paper).includes(paperTagFilter()))
       && (statusFilter() === "all" || statusOf(paper.id) === statusFilter())
       && (!query || haystack.includes(query));
   });
@@ -1056,6 +1145,30 @@ function clusterName(clusterId) {
   return data.clusters.find((cluster) => cluster.id === clusterId)?.name || clusterId;
 }
 
+function paperTags(paperOrId) {
+  const paperId = typeof paperOrId === "string" ? paperOrId : paperOrId && paperOrId.id;
+  if (!paperId) return [];
+  const map = data.paperTags || {};
+  return Array.isArray(map[paperId]) ? map[paperId] : [];
+}
+
+function paperTagName(tagId) {
+  return (data.paperTagDefinitions || []).find((tag) => tag.id === tagId)?.name || tagId;
+}
+
+function paperTagDefinitionsForList(papers) {
+  const activeTagIds = new Set();
+  (papers || []).forEach((paper) => {
+    paperTags(paper).forEach((tagId) => activeTagIds.add(tagId));
+  });
+  const definitions = (data.paperTagDefinitions || []).filter((tag) => activeTagIds.has(tag.id));
+  if (paperTagFilter() !== "all" && !definitions.some((tag) => tag.id === paperTagFilter())) {
+    const selected = (data.paperTagDefinitions || []).find((tag) => tag.id === paperTagFilter());
+    if (selected) return [selected].concat(definitions);
+  }
+  return definitions;
+}
+
 function findPaper(paperId) {
   return data.papers.find((paper) => paper.id === paperId) || data.papers[0];
 }
@@ -1099,24 +1212,78 @@ function topicFocus() {
     seed_papers: ["vidhalluc", "mashvlm", "tempcompass", "consistency"]
   };
   const raw = sync.topicFocus || {};
+  const presets = {
+    temporal_hallucination: {
+      mode: "temporal_hallucination",
+      primary_topic: raw.primary_topic || fallback.primary_topic,
+      summary: raw.summary || fallback.summary,
+      practical_failure_modes: Array.isArray(raw.practical_failure_modes) && raw.practical_failure_modes.length ? raw.practical_failure_modes : fallback.practical_failure_modes,
+      seed_papers: Array.isArray(raw.seed_papers) && raw.seed_papers.length ? raw.seed_papers : fallback.seed_papers,
+      tagLabel: "temporal hallucination",
+      matchPaperIds: ["vidhalluc", "mashvlm", "tempcompass", "consistency", "timechat"],
+      matchTerms: ["hallucination", "consistency", "temporal benchmark", "grounding", "faithfulness"]
+    },
+    frame_selection: {
+      mode: "frame_selection",
+      primary_topic: "Video frame selection for VLLM",
+      summary: "Switch to this view when you want to prioritize papers on adaptive sampling, retrieval, redundancy control, and budget-aware evidence selection for small video-language models.",
+      practical_failure_modes: ["uniform 8-frame misses decisive event", "duplicate frames waste token budget", "query-agnostic sampling", "weak event coverage under tight budget"],
+      seed_papers: ["coselect", "vap", "rmllava", "adaptivegreedy"],
+      tagLabel: "frame selection",
+      matchPaperIds: ["vap", "vilamp", "coselect", "rmllava", "adaptivegreedy", "lvhaystack", "moviechat", "videoespresso"],
+      matchTerms: ["frame selection", "sampling", "keyframe", "retrieval", "coverage", "active perception", "core frame"]
+    }
+  };
+  const mode = state.topicFocusMode && presets[state.topicFocusMode] ? state.topicFocusMode : "temporal_hallucination";
   return {
-    primary_topic: raw.primary_topic || fallback.primary_topic,
-    summary: raw.summary || fallback.summary,
-    practical_failure_modes: Array.isArray(raw.practical_failure_modes) && raw.practical_failure_modes.length ? raw.practical_failure_modes : fallback.practical_failure_modes,
-    seed_papers: Array.isArray(raw.seed_papers) && raw.seed_papers.length ? raw.seed_papers : fallback.seed_papers
+    ...presets[mode],
+    options: [
+      { id: "temporal_hallucination", label: "Temporal hallucination" },
+      { id: "frame_selection", label: "Frame selection" }
+    ]
   };
 }
 
 function focusSeedPapers() {
-  const list = topicFocus().seed_papers
+  const focus = topicFocus();
+  const list = focus.seed_papers
     .map((seed) => data.papers.find((paper) => paper.id === seed || paper.title.toLowerCase().includes(String(seed).toLowerCase())))
     .filter(Boolean);
   return list.length ? list : data.papers.filter((paper) => focusRelated(paper)).slice(0, 4);
 }
 
 function focusRelated(paper) {
+  const focus = topicFocus();
+  if (Array.isArray(focus.matchPaperIds) && focus.matchPaperIds.includes(paper.id)) return true;
   const text = `${paper.title} ${paper.focus} ${paper.why}`.toLowerCase();
-  return text.includes("hallucination") || text.includes("consistency") || text.includes("temporal benchmark");
+  return Array.isArray(focus.matchTerms) && focus.matchTerms.some((term) => text.includes(String(term).toLowerCase()));
+}
+
+function renderTopicFocusSelector(id) {
+  const focus = topicFocus();
+  return `
+    <div class="filter-row" style="margin: 10px 0 0;">
+      <label for="${id}" class="muted">Choose topic focus</label>
+      <select id="${id}" class="select-input" data-topic-focus-select="1">
+        ${focus.options.map((option) => `<option value="${option.id}" ${focus.mode === option.id ? "selected" : ""}>${escapeHtml(option.label)}</option>`).join("")}
+      </select>
+    </div>
+  `;
+}
+
+function bindTopicFocusSelector(root) {
+  qsa(root, "[data-topic-focus-select]").forEach((node) => node.addEventListener("change", (event) => {
+    state.topicFocusMode = event.target.value;
+    saveState();
+    renderAll();
+    setView(state.view || "dashboard");
+  }));
+  qsa(root, "[data-topic-focus-preset]").forEach((node) => node.addEventListener("click", () => {
+    state.topicFocusMode = node.dataset.topicFocusPreset;
+    saveState();
+    renderAll();
+    setView(state.view || "dashboard");
+  }));
 }
 
 function tierFilter() {
@@ -1124,7 +1291,15 @@ function tierFilter() {
 }
 
 function categoryFilter() {
-  return state.categoryFilter || "all";
+  const legacyMap = {
+    localization: "grounding",
+    causal: "reasoning"
+  };
+  return legacyMap[state.categoryFilter] || state.categoryFilter || "all";
+}
+
+function paperTagFilter() {
+  return state.paperTagFilter || "all";
 }
 
 function statusFilter() {
@@ -1662,9 +1837,11 @@ function loadState() {
     parsed.quickUnderstandOpen = parsed.quickUnderstandOpen || {};
     parsed.deepUnderstand = parsed.deepUnderstand || null;
     parsed.imageViewer = parsed.imageViewer || null;
+    parsed.topicFocusMode = parsed.topicFocusMode || "temporal_hallucination";
+    parsed.paperTagFilter = parsed.paperTagFilter || "all";
     return parsed;
   } catch (_error) {
-    return { paperStatuses: {}, paperFlags: {}, localInbox: [], quickUnderstandOpen: {}, deepUnderstand: null, imageViewer: null };
+    return { paperStatuses: {}, paperFlags: {}, localInbox: [], quickUnderstandOpen: {}, deepUnderstand: null, imageViewer: null, topicFocusMode: "temporal_hallucination", paperTagFilter: "all" };
   }
 }
 

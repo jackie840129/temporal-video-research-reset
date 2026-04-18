@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at":  "2026-03-27T02:26:55",
+    "generated_at":  "2026-04-17T23:51:45",
     "root":  "C:\\Users\\jackieliu\\Documents\\Research\\temporal-video-research-reset",
     "papers":  [
                    {
@@ -9,6 +9,14 @@
                        "note":  "already on disk",
                        "pdf_file":  "pdfs/tempcompass.pdf",
                        "pdf_url":  "https://arxiv.org/pdf/2403.00476.pdf"
+                   },
+                   {
+                       "id":  "videomme",
+                       "title":  "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/videomme.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2405.21075.pdf"
                    },
                    {
                        "id":  "mvbench",
@@ -195,20 +203,20 @@
                        "pdf_url":  "https://arxiv.org/pdf/2111.04321.pdf"
                    },
                    {
-                       "id":  "vidhalluc",
-                       "title":  "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
-                       "status":  "present",
-                       "note":  "already on disk",
-                       "pdf_file":  "pdfs/vidhalluc.pdf",
-                       "pdf_url":  "https://arxiv.org/pdf/2412.03735.pdf"
-                   },
-                   {
                        "id":  "tsgvsurvey",
                        "title":  "Temporal Sentence Grounding in Videos: A Survey and Future Directions",
                        "status":  "present",
                        "note":  "already on disk",
                        "pdf_file":  "pdfs/tsgvsurvey.pdf",
                        "pdf_url":  "https://arxiv.org/pdf/2201.08071.pdf"
+                   },
+                   {
+                       "id":  "vidhalluc",
+                       "title":  "VidHalluc: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding",
+                       "status":  "present",
+                       "note":  "already on disk",
+                       "pdf_file":  "pdfs/vidhalluc.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2412.03735.pdf"
                    },
                    {
                        "id":  "eventsurvey",
@@ -219,20 +227,52 @@
                        "pdf_url":  "https://openaccess.thecvf.com/content/CVPR2024W/VDU/papers/Sanders_A_Survey_of_Video_Datasets_for_Grounded_Event_Understanding_CVPRW_2024_paper.pdf"
                    },
                    {
-                       "id":  "videomme",
-                       "title":  "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis",
-                       "status":  "present",
-                       "note":  "downloaded on 2026-04-01",
-                       "pdf_file":  "pdfs/videomme.pdf",
-                       "pdf_url":  "https://arxiv.org/pdf/2405.21075.pdf"
-                   },
-                   {
                        "id":  "mashvlm",
                        "title":  "MASH-VLM: Mitigating Action-Scene Hallucination in Video-LLMs through Disentangled Spatial-Temporal Representations",
                        "status":  "present",
                        "note":  "already on disk",
                        "pdf_file":  "pdfs/mashvlm.pdf",
                        "pdf_url":  "https://arxiv.org/pdf/2503.15871.pdf"
+                   },
+                   {
+                       "id":  "vap",
+                       "title":  "Video Active Perception: Efficient Inference-Time Long-Form Video Understanding with Vision-Language Models",
+                       "status":  "failed",
+                       "note":  "遠端伺服器傳回一個錯誤: (403) 禁止。",
+                       "pdf_file":  "pdfs/vap.pdf",
+                       "pdf_url":  "https://openreview.net/pdf?id=KtqZrNjvjd"
+                   },
+                   {
+                       "id":  "vilamp",
+                       "title":  "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation",
+                       "status":  "failed",
+                       "note":  "遠端伺服器傳回一個錯誤: (403) 禁止。",
+                       "pdf_file":  "pdfs/vilamp.pdf",
+                       "pdf_url":  "https://openreview.net/pdf?id=1CK1kuH1he"
+                   },
+                   {
+                       "id":  "coselect",
+                       "title":  "Training-Free Adaptive Frame Selection for Video-Language Understanding",
+                       "status":  "failed",
+                       "note":  "遠端伺服器傳回一個錯誤: (403) 禁止。",
+                       "pdf_file":  "pdfs/coselect.pdf",
+                       "pdf_url":  "https://openreview.net/pdf?id=Pr3I3ewBFU"
+                   },
+                   {
+                       "id":  "rmllava",
+                       "title":  "RM-LLaVA: An Efficient Training-Free Video Understanding Framework with Redundancy-Minimized Frame Selection",
+                       "status":  "failed",
+                       "note":  "遠端伺服器傳回一個錯誤: (403) 禁止。",
+                       "pdf_file":  "pdfs/rmllava.pdf",
+                       "pdf_url":  "https://openreview.net/pdf?id=TiQUnbEQ3a"
+                   },
+                   {
+                       "id":  "adaptivegreedy",
+                       "title":  "Adaptive Greedy Frame Selection for Long Video Understanding",
+                       "status":  "downloaded",
+                       "note":  "https://arxiv.org/pdf/2603.20180.pdf",
+                       "pdf_file":  "pdfs/adaptivegreedy.pdf",
+                       "pdf_url":  "https://arxiv.org/pdf/2603.20180.pdf"
                    }
                ]
 }

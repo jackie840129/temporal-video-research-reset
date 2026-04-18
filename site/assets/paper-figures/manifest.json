@@ -51,10 +51,18 @@
                       "first_page":  1,
                       "page_count":  22
                   },
+    "videomme":  {
+                     "first_page":  1,
+                     "page_count":  13
+                 },
     "compositional":  {
                           "first_page":  1,
                           "page_count":  10
                       },
+    "adaptivegreedy":  {
+                           "first_page":  1,
+                           "page_count":  13
+                       },
     "consistency":  {
                         "first_page":  1,
                         "page_count":  10
@@ -79,10 +87,6 @@
                       "first_page":  1,
                       "page_count":  11
                   },
-    "videomme":  {
-                     "first_page":  1,
-                     "page_count":  13
-                 },
     "egotempo":  {
                      "first_page":  1,
                      "page_count":  10

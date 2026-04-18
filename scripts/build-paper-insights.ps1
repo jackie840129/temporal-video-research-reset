@@ -18,9 +18,10 @@ function Get-CategoryProblem {
   param([string]$Category)
   switch ($Category) {
     "evaluation" { return "Current evaluation often overstates temporal ability or hides the exact failure mode." }
-    "localization" { return "Models may answer what happened but still fail to localize when it happened." }
-    "longvideo" { return "Long videos create retrieval and memory bottlenecks before reasoning even starts." }
-    "causal" { return "Compositional temporal reasoning is often weak even when benchmark scores improve." }
+    "grounding" { return "Models may answer what happened but still fail to localize when it happened." }
+    "frame_selection" { return "The core bottleneck may be which frames the model sees, not only how many frames it can afford." }
+    "longvideo" { return "Long videos create memory and compression bottlenecks even when the right evidence is already known." }
+    "reasoning" { return "Compositional temporal reasoning is often weak even when benchmark scores improve." }
     "ordering" { return "Models still confuse event order, transitions, and time-sensitive relationships." }
     default { return "Temporal understanding remains hard to measure and easy to shortcut." }
   }
@@ -30,9 +31,10 @@ function Get-CategoryMethod {
   param($Paper)
   switch ($Paper.category) {
     "evaluation" { return "Frames the paper around benchmark design, failure diagnosis, or robustness measurement rather than only raw score gain." }
-    "localization" { return "Focuses on time binding, timestamp prediction, grounding, or span verification." }
-    "longvideo" { return "Focuses on memory, search, pruning, or long-context handling for video evidence." }
-    "causal" { return "Focuses on explicit structure, evidence chains, or multi-step temporal reasoning." }
+    "grounding" { return "Focuses on time binding, timestamp prediction, grounding, or span verification." }
+    "frame_selection" { return "Focuses on adaptive sampling, keyframe retrieval, redundancy control, or budget-aware evidence coverage." }
+    "longvideo" { return "Focuses on memory, compression, or long-context handling for video evidence." }
+    "reasoning" { return "Focuses on explicit structure, evidence chains, or multi-step temporal reasoning." }
     "ordering" { return "Focuses on sequence sensitivity, temporal alignment, or order-aware representation learning." }
     default { return "Focuses on temporal video understanding with a task setup matched to its main claim." }
   }
@@ -42,9 +44,10 @@ function Get-CategoryWhy {
   param($Paper)
   switch ($Paper.category) {
     "evaluation" { return "Useful for separating real temporal understanding from benchmark-specific shortcuts or hallucination-shaped errors." }
-    "localization" { return "Useful when the key question is whether the model can ground a temporal claim in the right moment." }
-    "longvideo" { return "Useful for testing whether failure comes from missing evidence retrieval rather than weak reasoning alone." }
-    "causal" { return "Useful for checking whether the model can maintain grounded multi-step temporal reasoning." }
+    "grounding" { return "Useful when the key question is whether the model can ground a temporal claim in the right moment." }
+    "frame_selection" { return "Useful when the practical question is which sparse evidence a small or budget-limited model should actually see." }
+    "longvideo" { return "Useful for testing whether failure comes from memory or compression limits rather than weak reasoning alone." }
+    "reasoning" { return "Useful for checking whether the model can maintain grounded multi-step temporal reasoning." }
     "ordering" { return "Useful for studying temporal hallucination as order confusion, transition error, or unsupported sequence claims." }
     default { return "Useful for mapping where temporal hallucination and temporal understanding start to diverge." }
   }
@@ -63,9 +66,10 @@ function Get-NextActions {
   param($Paper)
   switch ($Paper.category) {
     "evaluation" { return @("Check which failure mode is actually exposed.", "Compare with one method paper to see whether the gain is real.", "Use it to refine your evaluation criteria.") }
-    "localization" { return @("Check whether the model grounds the answer in the right moment.", "Compare first-pass accuracy versus consistency.", "Ask what evidence would falsify the claim.") }
-    "longvideo" { return @("Check whether retrieval is the real bottleneck.", "Compare sparse search against dense context.", "Use it to refine long-video evidence assumptions.") }
-    "causal" { return @("Check whether the reasoning chain is grounded.", "Compare with a benchmark paper to avoid score-only reading.", "Ask whether the structure actually improves faithfulness.") }
+    "grounding" { return @("Check whether the model grounds the answer in the right moment.", "Compare first-pass accuracy versus consistency.", "Ask what evidence would falsify the claim.") }
+    "frame_selection" { return @("Check how the selector balances relevance versus coverage.", "Compare against uniform sampling at the same frame budget.", "Ask whether the method is query-guided, diversity-guided, or both.") }
+    "longvideo" { return @("Check whether memory or compression is the real bottleneck.", "Compare dense context against compressed context.", "Use it to refine long-video systems assumptions.") }
+    "reasoning" { return @("Check whether the reasoning chain is grounded.", "Compare with a benchmark paper to avoid score-only reading.", "Ask whether the structure actually improves faithfulness.") }
     "ordering" { return @("Check the exact temporal relation the paper tries to fix.", "Compare with a benchmark exposing order confusion.", "Ask whether the method improves temporal faithfulness or only answer style.") }
     default { return @("Identify the main claim.", "Find the likely failure mode.", "Compare it against one benchmark and one method paper.") }
   }
